@@ -1,0 +1,24 @@
+{
+  "name": "Desa Sukagalih - Kec. Sukaratu Kab. Tasikmalaya",
+  "short_name": "Sukagalih",
+  "description": "Portal Digital Resmi & UMKM Desa Sukagalih, Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#15284F",
+  "theme_color": "#15284F",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/logo-desa.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/logo-kkn.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

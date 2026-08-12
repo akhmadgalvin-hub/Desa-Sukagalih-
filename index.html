@@ -1,0 +1,5486 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desa Sukagalih | Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat</title>
+  <meta name="description" content="Portal Digital Resmi Desa Sukagalih, Kecamatan Sukaratu, Kabupaten Tasikmalaya. Mengenalkan potensi desa agraris, UMKM unggulan, wisata alam Galunggung, dan program KKN 09 Universitas BTH.">
+  <meta name="keywords" content="Desa Sukagalih, Sukagalih Sukaratu, Tasikmalaya, Desa Digital Indonesia, Batik Sukagalih, UMKM Sukagalih, Wisata Galunggung, KKN BTH 2026">
+  <meta name="author" content="Pemerintah Desa Sukagalih & KKN Kelompok 09 Universitas BTH Tasikmalaya">
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="O1PYX-_K68sc153wSBviZvbxO3s6zoesYWXlLjHaTno" />
+  <meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sukagalih-tasikmalaya.desa.id/">
+  <meta property="og:title" content="Desa Sukagalih | Kecamatan Sukaratu, Kabupaten Tasikmalaya">
+  <meta property="og:description" content="Digitalisasi Desa Sukagalih: Mengenalkan Potensi, Menghubungkan Masyarakat di Kaki Gunung Galunggung.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-desa.svg">
+
+  <!-- PWA Manifest & Mobile Theme -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#15284F">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="assets/images/logo-desa.svg">
+
+  <!-- Leaflet CSS for Maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <style>
+/* ==========================================================================
+   WEBSITE DIGITAL DESA SUKAGALIH - INDONESIAN BATIK & ULTRA-PRO DESIGN SYSTEM
+   Diperkaya dengan Ornamen Batik Tradisional Nusantara, Nuansa Khas Jawa Barat / Sunda,
+   dan Palet Resmi Logo Desa Sukagalih & KKN Kelompok 09 BTH:
+   - Deep Navy Royal (#15284F)
+   - Emerald & Forest Green (#15803D, #22C55E)
+   - Royal Batik Gold (#EAB308, #D97706, #CA8A04)
+   - River Sky Blue (#0284C7)
+   - Warm Cream Canvas (#F8FAF7, #F5EFE6)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Logo & Batik Indonesian Palette */
+  --color-navy: #15284F;           /* Royal Navy Blue */
+  --color-navy-dark: #0A162C;      /* Deep Midnight Navy */
+  --color-navy-light: #1E3A6E;     /* Soft Navy Accent */
+  
+  --color-green-main: #15803D;     /* Hijau Gunung Galunggung */
+  --color-green-vibrant: #22C55E;  /* Hijau Lembah Subur */
+  --color-green-light: #86EFAC;    /* Hijau Daun Muda */
+  --color-green-subtle: #EDF7EE;   /* Tint Background Hijau */
+
+  --color-gold: #EAB308;           /* Emas Padi Nusantara */
+  --color-gold-dark: #B45309;      /* Emas Tembaga Batik */
+  --color-gold-light: #FEF08A;     /* Kilau Emas */
+  --color-gold-gradient: linear-gradient(135deg, #FDE047 0%, #EAB308 50%, #B45309 100%);
+
+  --color-sky: #0284C7;            /* Biru Mata Air Cikatubang */
+  --color-sky-light: #38BDF8;
+
+  /* Indonesian Heritage Canvas */
+  --bg-offwhite: #F9FBF8;
+  --bg-cream: #F5EFE6;             /* Nuansa Kain Mori Batik */
+  --bg-surface: #FFFFFF;
+  --bg-dark-section: #15284F;
+
+  /* Typography */
+  --text-main: #1E293B;
+  --text-navy: #15284F;
+  --text-muted: #64748B;
+  --text-light: #F8FAF7;
+  --text-white: #FFFFFF;
+
+  /* Borders & Shadows */
+  --border-subtle: #E2E8F0;
+  --border-gold: rgba(234, 179, 8, 0.45);
+  --border-green: rgba(34, 197, 94, 0.35);
+
+  --shadow-sm: 0 4px 14px rgba(21, 40, 79, 0.05);
+  --shadow-md: 0 10px 30px rgba(21, 40, 79, 0.09);
+  --shadow-lg: 0 20px 50px rgba(21, 40, 79, 0.16);
+  --shadow-gold: 0 8px 25px rgba(234, 179, 8, 0.28);
+  --shadow-float: 0 25px 60px -10px rgba(21, 40, 79, 0.25);
+
+  /* Radius */
+  --radius-xs: 8px;
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-hero: 'Outfit', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-accent: 'Cinzel', serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--bg-offwhite);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Seamless Indonesian Batik Motif Background Pattern */
+.batik-bg-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.08) 2px, transparent 2.5px),
+    radial-gradient(circle at 0% 0%, rgba(21, 40, 79, 0.05) 2px, transparent 2.5px),
+    radial-gradient(circle at 100% 100%, rgba(21, 128, 61, 0.06) 2px, transparent 2.5px);
+  background-size: 40px 40px, 40px 40px, 40px 40px;
+}
+
+.batik-watermark {
+  position: relative;
+}
+
+.batik-watermark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23EAB308' stroke-width='1.2' stroke-opacity='0.12'%3E%3Cpath d='M40,0 C25,20 25,60 40,80 C55,60 55,20 40,0 Z'/%3E%3Cpath d='M0,40 C20,25 60,25 80,40 C60,55 20,55 0,40 Z'/%3E%3Ccircle cx='40' cy='40' r='5' fill='%2315803D' fill-opacity='0.1'/%3E%3Ccircle cx='0' cy='0' r='5' fill='%2315284F' fill-opacity='0.1'/%3E%3Ccircle cx='80' cy='0' r='5' fill='%2315284F' fill-opacity='0.1'/%3E%3Ccircle cx='0' cy='80' r='5' fill='%2315284F' fill-opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='5' fill='%2315284F' fill-opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Batik Decorative Ribbon Border */
+.batik-divider {
+  width: 100%;
+  height: 12px;
+  background-image: repeating-linear-gradient(45deg, var(--color-gold) 0, var(--color-gold) 12px, var(--color-navy) 12px, var(--color-navy) 24px, var(--color-green-main) 24px, var(--color-green-main) 36px);
+  opacity: 0.85;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   UTILITY & LAYOUT CLASSES
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.section-tight {
+  padding: 3.5rem 0;
+}
+
+.section-bg-light {
+  background-color: var(--color-green-subtle);
+}
+
+.section-bg-dark {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  color: var(--text-light);
+}
+
+.section-bg-dark h1,
+.section-bg-dark h2,
+.section-bg-dark h3,
+.section-bg-dark h4 {
+  color: var(--text-white);
+}
+
+.section-bg-dark p {
+  color: #D3E2F8;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.75rem auto;
+}
+
+.section-header.text-left {
+  text-align: left;
+  margin-left: 0;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.15rem;
+  background-color: rgba(21, 128, 61, 0.12);
+  color: var(--color-green-main);
+  border: 1px solid rgba(21, 128, 61, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.1);
+}
+
+.section-badge.badge-white {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: var(--color-gold);
+  border-color: rgba(234, 179, 8, 0.5);
+  box-shadow: var(--shadow-gold);
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+  color: var(--color-navy);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.85rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-green-main), #166534);
+  color: var(--text-white);
+  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.35);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #166534, var(--color-navy));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(21, 40, 79, 0.4);
+  color: var(--text-white);
+}
+
+.btn-secondary {
+  background: var(--color-gold-gradient);
+  color: var(--color-navy-dark);
+  box-shadow: var(--shadow-gold);
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-secondary:hover {
+  background: var(--color-gold-dark);
+  color: #FFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-navy);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--text-white);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--text-white);
+  color: var(--color-navy);
+  border-color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 1.05rem 2.35rem;
+  font-size: 1.05rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Organic & Glass Cards */
+.card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.card-gold-trim {
+  border-top: 4px solid var(--color-gold);
+}
+
+/* ==========================================================================
+   STICKY NAVBAR
+   ========================================================================= */
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all var(--transition-normal);
+}
+
+.navbar-wrapper.scrolled {
+  background: rgba(21, 40, 79, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 2px solid var(--color-gold);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  transition: height var(--transition-normal);
+}
+
+.navbar-wrapper.scrolled .navbar-inner {
+  height: 72px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.brand-emblem {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-navy);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  box-shadow: 0 4px 16px rgba(21, 40, 79, 0.35);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.navbar-wrapper.scrolled .brand-title {
+  color: #FFFFFF;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-green-main);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.navbar-wrapper.scrolled .brand-subtitle {
+  color: var(--color-gold);
+}
+
+/* Desktop Nav Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.35rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.85rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-navy);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.navbar-wrapper.scrolled .nav-link {
+  color: #E2E8F0;
+}
+
+.nav-link:hover {
+  color: var(--color-green-vibrant);
+  background-color: rgba(34, 197, 94, 0.15);
+}
+
+.navbar-wrapper.scrolled .nav-link:hover {
+  color: var(--color-gold);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active {
+  color: #FFFFFF;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-green-main), var(--color-navy));
+  box-shadow: 0 3px 10px rgba(21, 128, 61, 0.35);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.navbar-wrapper.scrolled .nav-link.active {
+  background: var(--color-green-main);
+  color: #FFFFFF;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Mobile Hamburger */
+.mobile-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: rgba(21, 40, 79, 0.1);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(21, 40, 79, 0.2);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-navy);
+}
+
+.navbar-wrapper.scrolled .mobile-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 82%;
+  max-width: 340px;
+  height: 100vh;
+  background-color: var(--color-navy-dark);
+  color: #FFFFFF;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  transition: right var(--transition-smooth);
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal);
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(234, 179, 8, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.drawer-nav .nav-link {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  color: #E2E8F0;
+}
+
+/* ==========================================================================
+   HERO SECTION (BATIK LUXURY OVERLAY)
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: 110px;
+  padding-bottom: 6.5rem;
+  background: 
+    linear-gradient(180deg, rgba(21, 40, 79, 0.9) 0%, rgba(22, 101, 52, 0.85) 60%, var(--bg-offwhite) 100%),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+/* Subtle Batik Watermark on Hero */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23EAB308' stroke-width='1.5' stroke-opacity='0.15'%3E%3Cpath d='M50,0 C30,25 30,75 50,100 C70,75 70,25 50,0 Z'/%3E%3Cpath d='M0,50 C25,30 75,30 100,50 C75,70 25,70 0,50 Z'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%23FDE047' fill-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.4rem;
+  background: rgba(10, 22, 44, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-gold-light);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-gold);
+}
+
+.hero-title {
+  font-size: 3.65rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-white);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title-highlight {
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: #E2ECE0;
+  margin-bottom: 2.25rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+}
+
+/* Floating Statistics with Golden Accents */
+.hero-stats-wrapper {
+  margin-top: -3.75rem;
+  position: relative;
+  z-index: 10;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-top: 4px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all var(--transition-normal);
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-navy);
+}
+
+.stat-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-green-subtle), var(--bg-cream));
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   ABOUT & VISI MISI SECTIONS
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-main {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  aspect-ratio: 4/3;
+  border: 4px solid var(--color-navy);
+}
+
+.about-image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.about-image-wrapper:hover .about-image-main img {
+  transform: scale(1.04);
+}
+
+.about-floating-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.6rem;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.badge-number {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1;
+}
+
+.badge-desc {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-green-main);
+  line-height: 1.2;
+}
+
+.about-meta-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.75rem 0 2rem 0;
+}
+
+.about-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.meta-icon {
+  color: var(--color-green-main);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--color-navy);
+}
+
+/* Visi & Misi Layout */
+.visi-box {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  border: 2px solid var(--color-navy);
+  border-top: 6px solid var(--color-gold);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  margin-bottom: 2.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.visi-box::before {
+  content: '"';
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  font-family: var(--font-heading);
+  font-size: 9rem;
+  color: rgba(21, 40, 79, 0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.visi-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--color-green-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.visi-quote {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.visi-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.misi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.misi-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem;
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--color-gold);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.misi-card:hover {
+  border-color: var(--color-navy);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.misi-num {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.misi-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.misi-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   POTENSI DESA & FEATURED STORY
+   ========================================================================== */
+
+.potensi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.potensi-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.potensi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.potensi-image {
+  height: 210px;
+  position: relative;
+  overflow: hidden;
+}
+
+.potensi-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.potensi-card:hover .potensi-image img {
+  transform: scale(1.06);
+}
+
+.potensi-icon-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: var(--shadow-md);
+  border: 2.5px solid var(--color-gold);
+}
+
+.potensi-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.potensi-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 0.35rem;
+}
+
+.potensi-tagline {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-green-main);
+  margin-bottom: 0.75rem;
+}
+
+.potensi-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.potensi-footer {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+/* Featured Story (Dark Section) */
+.story-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-title {
+  font-size: 2.35rem;
+  font-weight: 900;
+  color: var(--text-white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.story-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-gold);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.story-body {
+  font-size: 0.98rem;
+  color: #D3E2F8;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.story-stat-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(234, 179, 8, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 0.75rem;
+  text-align: center;
+}
+
+.story-stat-val {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-gold);
+}
+
+.story-stat-lbl {
+  font-size: 0.75rem;
+  color: #CBD5E1;
+  margin-top: 0.2rem;
+  font-weight: 600;
+}
+
+.story-image-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 3px solid var(--color-gold);
+  aspect-ratio: 4/3;
+}
+
+.story-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   UMKM MARKETPLACE & FILTER
+   ========================================================================== */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.category-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  padding: 0.55rem 1.35rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.category-pill:hover {
+  background: var(--color-green-subtle);
+  color: var(--color-green-main);
+  border-color: var(--color-green-vibrant);
+}
+
+.category-pill.active {
+  background: var(--color-navy);
+  color: var(--text-white);
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 14px rgba(21, 40, 79, 0.3);
+}
+
+.search-input-wrapper {
+  position: relative;
+  min-width: 270px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.6rem;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 3px rgba(21, 40, 79, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Product Cards */
+.umkm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.product-image {
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+.product-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(21, 40, 79, 0.92);
+  backdrop-filter: blur(4px);
+  color: var(--color-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.product-category-tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-navy);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.product-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-seller {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-green-main);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.product-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.product-price {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 900;
+  color: var(--color-green-main);
+}
+
+.product-location {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.product-actions {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   WISATA & DESTINATION CARDS
+   ========================================================================== */
+
+.tourism-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.tourism-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.tourism-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.tourism-image {
+  height: 100%;
+  min-height: 250px;
+  position: relative;
+}
+
+.tourism-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tourism-content {
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tourism-cat {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--color-green-main);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.tourism-name {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.tourism-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.tourism-facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.facility-tag {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--color-green-subtle);
+  color: var(--color-navy);
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  border: 1px solid rgba(21, 128, 61, 0.15);
+}
+
+.tourism-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   BERITA & AGENDA SECTION
+   ========================================================================== */
+
+.news-agenda-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+.news-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.news-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.news-image {
+  height: 165px;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.06);
+}
+
+.news-category-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  background: var(--color-navy);
+  color: var(--color-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 900;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.news-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.news-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-excerpt {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Agenda Timeline */
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.agenda-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--color-gold);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+  transition: all var(--transition-fast);
+}
+
+.agenda-card:hover {
+  border-color: var(--color-navy);
+  transform: translateX(4px);
+}
+
+.agenda-date-box {
+  background: linear-gradient(135deg, var(--color-navy), var(--color-navy-dark));
+  color: var(--text-white);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  text-align: center;
+  min-width: 58px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-gold);
+}
+
+.date-day {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.date-month {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.agenda-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.agenda-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.agenda-loc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   KKN JEJAK & TIM PROFILE (INDONESIAN BATIK MOTIF)
+   ========================================================================== */
+
+.kkn-hero-card {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #0a162c 100%);
+  border-radius: var(--radius-xl);
+  padding: 3.25rem;
+  color: var(--text-white);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color-gold);
+}
+
+.kkn-hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.kkn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.15rem;
+  background: rgba(234, 179, 8, 0.18);
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-gold-light);
+  margin-bottom: 1rem;
+}
+
+.kkn-univ-title {
+  font-size: 2.35rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: #FFFFFF;
+}
+
+.kkn-univ-sub {
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.kkn-details-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.kkn-detail-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.kkn-logo-emblem-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kkn-emblem-img {
+  width: 155px;
+  height: 155px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.5));
+}
+
+.kkn-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.program-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem;
+  border: 1px solid var(--border-subtle);
+  border-top: 4px solid var(--color-green-main);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.program-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.program-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.program-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* KKN 19 Members Grid with Indonesian Batik Accents */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.35rem;
+}
+
+.team-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: all var(--transition-normal);
+  border-top: 3px solid var(--color-gold);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-navy);
+}
+
+.team-name {
+  font-size: 0.98rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.25;
+}
+
+/* ==========================================================================
+   GALERI MASONRY & LIGHTBOX
+   ========================================================================== */
+
+.gallery-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(21, 40, 79, 0.94) 0%, transparent 100%);
+  color: var(--text-white);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.gallery-tag {
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  font-weight: 800;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 22, 44, 0.96);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 920px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.lightbox-img {
+  max-height: 75vh;
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  border: 3px solid var(--color-gold);
+}
+
+.lightbox-caption {
+  color: var(--text-white);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--text-white);
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   DATA DESA VISUALIZATIONS & CHARTS
+   ========================================================================== */
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.chart-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  border: 1px solid var(--border-subtle);
+  border-top: 4px solid var(--color-navy);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.chart-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-navy);
+}
+
+.chart-canvas-wrapper {
+  position: relative;
+  height: 290px;
+  width: 100%;
+}
+
+.dusun-table-wrapper {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  margin-top: 2rem;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: var(--color-green-subtle);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--color-navy);
+}
+
+.custom-table td {
+  padding: 1rem;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-main);
+}
+
+.custom-table tr:hover td {
+  background-color: rgba(234, 179, 8, 0.06);
+}
+
+/* ==========================================================================
+   PEMERINTAHAN DESA & STRUKTUR SOTK
+   ========================================================================== */
+
+.gov-hero-leader {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-navy);
+  border-top: 6px solid var(--color-gold);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  max-width: 680px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.gov-leader-photo {
+  width: 140px;
+  height: 170px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-navy), var(--color-green-main));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  flex-shrink: 0;
+  font-size: 3rem;
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--color-gold);
+}
+
+.gov-leader-info h3 {
+  font-size: 1.55rem;
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+.gov-leader-role {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-green-main);
+  margin-bottom: 0.75rem;
+}
+
+.gov-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.gov-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--color-green-main);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.gov-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.gov-card-name {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  margin-bottom: 0.2rem;
+}
+
+.gov-card-role {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-green-main);
+  margin-bottom: 0.75rem;
+}
+
+.gov-card-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+/* ==========================================================================
+   INTERACTIVE MAP & CONTACT
+   ========================================================================== */
+
+.map-container {
+  height: 480px;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--color-navy);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.contact-info-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem;
+  border: 1px solid var(--border-subtle);
+  border-top: 5px solid var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin-top: 1.75rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--color-green-subtle);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.contact-text-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.contact-text-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.form-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem;
+  border: 1px solid var(--border-subtle);
+  border-top: 5px solid var(--color-navy);
+  box-shadow: var(--shadow-md);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-offwhite);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--color-navy);
+  background: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(21, 40, 79, 0.15);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   FOOTER SECTION (BATIK LUXURY INDONESIA)
+   ========================================================================== */
+
+.footer-main {
+  background-color: var(--color-navy-dark);
+  color: var(--text-light);
+  padding-top: 5.5rem;
+  padding-bottom: 2.25rem;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: #CBD5E1;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  color: var(--text-white);
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 2.5px;
+  background-color: var(--color-gold);
+  border-radius: var(--radius-full);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links a {
+  color: #CBD5E1;
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #94A3B8;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (375px - 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .potensi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .umkm-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .kkn-programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gov-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu, .nav-actions .btn {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .hero-title {
+    font-size: 2.35rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-stats-wrapper {
+    margin-top: -2rem;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-grid,
+  .story-wrapper,
+  .kkn-hero-grid,
+  .news-agenda-grid,
+  .contact-grid,
+  .tourism-card,
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  .potensi-grid,
+  .umkm-grid,
+  .news-cards-grid,
+  .gov-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    column-count: 2;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.95rem;
+  }
+  .gallery-grid {
+    column-count: 1;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .story-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+  </style>
+</head>
+<body class="batik-bg-pattern">
+
+  <!-- =========================================================================
+       STICKY NAVBAR DENGAN MOTIF BATIK & IDENTITAS RESMI
+       ========================================================================= -->
+  <header class="navbar-wrapper">
+    <!-- Official Portal Top Bar Badge -->
+    <div style="background: var(--color-navy-dark); color: #CBD5E1; font-size: 0.75rem; padding: 0.35rem 0; border-bottom: 1px solid rgba(234,179,8,0.25); text-align: center;">
+      <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <span style="color: var(--color-gold); font-weight: 800;">🇮🇩 PORTAL RESMI DESA DIGITAL:</span> <strong>sukagalih.desa.id</strong> • KEC. SUKARATU KAB. TASIKMALAYA
+        </div>
+        <div style="font-weight: 700; color: #E2ECE0;">
+          Karya Pengabdian KKN 2026 Kelompok 09 Universitas Bakti Tunas Husada (BTH)
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="navbar-inner">
+        <!-- Logo Desa & KKN -->
+        <a href="#/" class="navbar-brand">
+          <div class="brand-emblem">
+            <img src="assets/images/logo-desa.svg" alt="Logo Desa Sukagalih" style="width: 38px; height: 38px;">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">DESA SUKAGALIH</span>
+            <span class="brand-subtitle">KEC. SUKARATU • TASIKMALAYA</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#/" class="nav-link active">Beranda</a></li>
+            <li><a href="#/profil" class="nav-link">Profil</a></li>
+            <li><a href="#/pemerintahan" class="nav-link">Pemerintahan</a></li>
+            <li><a href="#/data-desa" class="nav-link">Data Desa</a></li>
+            <li><a href="#/potensi" class="nav-link">Potensi</a></li>
+            <li><a href="#/umkm" class="nav-link">UMKM</a></li>
+            <li><a href="#/wisata" class="nav-link">Wisata</a></li>
+            <li><a href="#/berita" class="nav-link">Berita</a></li>
+            <li><a href="#/galeri" class="nav-link">Galeri</a></li>
+            <li><a href="#/kkn" class="nav-link">KKN (19)</a></li>
+            <li><a href="#/kontak" class="nav-link">Kontak</a></li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Actions & Mobile Toggle -->
+        <div class="nav-actions">
+          <a href="#/potensi" class="btn btn-primary btn-sm">Jelajahi Desa</a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Menu Navigasi">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MOBILE NAVIGATION DRAWER
+       ========================================================================= -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div class="brand-emblem" style="width: 42px; height: 42px;">
+          <img src="assets/images/logo-desa.svg" alt="Logo Desa Sukagalih" style="width: 32px; height: 32px;">
+        </div>
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #FFFFFF;">DESA SUKAGALIH</div>
+          <div style="font-size: 0.7rem; color: var(--color-gold); font-weight: 700;">KEC. SUKARATU • TASIKMALAYA</div>
+        </div>
+      </div>
+      <button id="closeDrawer" style="background: none; border: none; color: #FFFFFF; font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="#/" class="nav-link active">Beranda</a>
+      <a href="#/profil" class="nav-link">Profil Desa</a>
+      <a href="#/pemerintahan" class="nav-link">Pemerintahan (SOTK)</a>
+      <a href="#/data-desa" class="nav-link">Data Kependudukan</a>
+      <a href="#/potensi" class="nav-link">Potensi Desa</a>
+      <a href="#/umkm" class="nav-link">Katalog UMKM</a>
+      <a href="#/wisata" class="nav-link">Destinasi Wisata</a>
+      <a href="#/berita" class="nav-link">Berita & Informasi</a>
+      <a href="#/galeri" class="nav-link">Galeri Foto</a>
+      <a href="#/kkn" class="nav-link">Tim KKN 09 (19 Orang)</a>
+      <a href="#/kontak" class="nav-link">Layanan & Kontak</a>
+      <a href="#/admin" class="nav-link" style="color: var(--color-gold); margin-top: 1rem;">🔐 Mock Admin Desa</a>
+    </nav>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN ROUTER VIEW CONTAINER
+       ========================================================================= -->
+  <main id="appContent" style="min-height: 80vh;">
+    <!-- Konten halaman dinamis dimuat otomatis oleh JavaScript router -->
+  </main>
+
+  <!-- PITA PEMBATAS BATIK TRADISIONAL NUSANTARA -->
+  <div class="batik-divider"></div>
+
+  <!-- =========================================================================
+       FOOTER SECTION (INDONESIAN BATIK MOTIF)
+       ========================================================================= -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Vision -->
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem;">
+            <div class="brand-emblem" style="width: 48px; height: 48px; border: 2px solid var(--color-gold);">
+              <img src="assets/images/logo-desa.svg" alt="Logo Desa Sukagalih" style="width: 36px; height: 36px;">
+            </div>
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0; color: #FFF;">DESA SUKAGALIH</h3>
+              <div style="font-size: 0.72rem; color: var(--color-gold); font-weight: 800; letter-spacing: 0.05em;">KECAMATAN SUKARATU • TASIKMALAYA</div>
+            </div>
+          </div>
+          <p>
+            Portal digital resmi transparansi informasi publik, promosi agrowisata alam Galunggung, kemandirian UMKM masyarakat, dan arsip program KKN 2026 Universitas BTH.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="https://instagram.com" target="_blank" class="facility-tag" style="background: rgba(255,255,255,0.1); color: #FFF; border-color: rgba(255,255,255,0.2);">📸 Instagram</a>
+            <a href="https://youtube.com" target="_blank" class="facility-tag" style="background: rgba(255,255,255,0.1); color: #FFF; border-color: rgba(255,255,255,0.2);">🎥 YouTube Desa</a>
+            <a href="#/kontak" class="facility-tag" style="background: rgba(234,179,8,0.2); color: var(--color-gold); border-color: var(--color-gold);">💬 WhatsApp Desa</a>
+          </div>
+        </div>
+
+        <!-- Tautan Cepat -->
+        <div class="footer-col">
+          <h4>Jelajahi Portal</h4>
+          <ul class="footer-links">
+            <li><a href="#/profil">Profil & Visi Misi</a></li>
+            <li><a href="#/pemerintahan">Struktur SOTK</a></li>
+            <li><a href="#/data-desa">Statistik Penduduk</a></li>
+            <li><a href="#/potensi">Katalog Potensi Alam</a></li>
+            <li><a href="#/umkm">Pasar Produk UMKM</a></li>
+            <li><a href="#/wisata">Destinasi Wisata</a></li>
+          </ul>
+        </div>
+
+        <!-- Informasi Publik -->
+        <div class="footer-col">
+          <h4>Layanan & Info</h4>
+          <ul class="footer-links">
+            <li><a href="#/berita">Berita & Kabar Desa</a></li>
+            <li><a href="#/galeri">Dokumentasi Kegiatan</a></li>
+            <li><a href="#/kkn">Tim KKN 09 BTH (19 Mahasiswa)</a></li>
+            <li><a href="#/kontak">Pelayanan Surat Warga</a></li>
+            <li><a href="#/admin">Mock Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak Kantor Desa -->
+        <div class="footer-col">
+          <h4>Kantor Balai Desa</h4>
+          <div style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6;">
+            <p style="margin-bottom: 0.5rem;">📍 Jl. Sukagalih No. 01, Dusun Cikatubang, Desa Sukagalih, Kec. Sukaratu, Kab. Tasikmalaya, Jawa Barat 46415</p>
+            <p style="margin-bottom: 0.5rem;">📞 Hotline: <strong>0813-2369-0168</strong></p>
+            <p style="margin-bottom: 0.5rem;">✉️ Email: ds.sukagalih@gmail.com</p>
+            <p>⏰ Senin - Jumat: 08.00 - 15.30 WIB</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Pemerintah Desa Sukagalih</strong>. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+        <div style="color: var(--color-gold); font-weight: 700;">
+          🏛️ Inisiatif Digitalisasi KKN 2026 Kelompok 09 Universitas Bakti Tunas Husada (BTH) Tasikmalaya
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal untuk Galeri Foto -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <img src="" alt="Perbesar Gambar" id="lightboxImg" class="lightbox-img">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS for Maps -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Chart.js for Data Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Application Bundled Scripts -->
+  <script>
+/**
+ * Master Data Desa Sukagalih, Kecamatan Sukaratu, Kabupaten Tasikmalaya
+ * Dikompilasi dari Dokumen Resmi Profil Desa Sukagalih & Program KKN 2026 Universitas BTH
+ */
+
+const SukagalihData = {
+  // Informasi Dasar & Identitas
+  villageInfo: {
+    name: "Desa Sukagalih",
+    district: "Kecamatan Sukaratu",
+    regency: "Kabupaten Tasikmalaya",
+    province: "Jawa Barat",
+    country: "Indonesia",
+    postalCode: "46415",
+    tagline: "Digitalisasi Desa Sukagalih: Mengenalkan Potensi, Menghubungkan Masyarakat.",
+    shortDesc: "Desa Sukagalih merupakan salah satu desa di Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat yang berada di kaki Gunung Galunggung dengan panorama alam yang asri, kesuburan tanah vulkanik, potensi pertanian, perikanan kolam air tawar, serta kehangatan masyarakat gotong royong.",
+    longDesc: "Desa Sukagalih terletak pada ketinggian 400 s.d 450 mdpl dengan topografi perbukitan dan hamparan sawah subur. Berjarak sekitar 4 Km dari ibu kota Kecamatan Sukaratu dan 16 Km dari pusat Ibu Kota Kabupaten Tasikmalaya melalui akses jalan beraspal hotmix. Website ini menjadi media informasi digital untuk mengenalkan kehidupan, potensi, kegiatan, dan masyarakat Desa Sukagalih secara berkelanjutan.",
+    locationBadge: "Sukaratu • Tasikmalaya • Jawa Barat",
+    coordinates: {
+      lat: -7.2625,
+      lng: 108.1633,
+      zoom: 14
+    },
+    hotline: "0813-2369-0168",
+    email: "ds.sukagalih@gmail.com",
+    address: "Jl. Desa Sukagalih No. 01, Dusun Cikatubang, Kec. Sukaratu, Kab. Tasikmalaya, Jawa Barat 46415",
+    officeHours: "Senin - Jumat: 08.00 - 15.30 WIB",
+  },
+
+  // Sejarah & Dasar Hukum
+  history: {
+    birthDate: "01 Januari 1979",
+    legalBasis: [
+      "Rafel Gubernur Kepala Daerah Tingkat 1 Provinsi Jawa Barat Nomor: 2046/M/5/1978 Tanggal 23 Mei 1978",
+      "Bupati Kepala Daerah Tingkat II Kabupaten Tasikmalaya Nomor: PM.022.1/27/B/SK/1978 TMT 01 Januari 1979"
+    ],
+    narrative: "Desa Sukagalih merupakan desa hasil pemekaran dari Desa Sukamahi (Desa Induk), yang pada 1 Januari 1979 dimekarkan menjadi 3 desa mandiri: Desa Sukamahi (Desa Induk), Desa Sukagalih (Pemekaran), dan Desa Sukalaksana (kini masuk wilayah Kec. Bungursari Kota Tasikmalaya). Sejak berdirinya, Desa Sukagalih terus bertumbuh menjadi pusat pertanian dan kemasyarakatan yang harmonis di kaki Gunung Galunggung.",
+    timeline: [
+      { year: "1978", title: "Penerbitan SK Pemekaran", desc: "Dikeluarkannya Keputusan Gubernur Jabar & SK Bupati Tasikmalaya perihal pemekaran Desa Sukamahi." },
+      { year: "1979", title: "Kelahiran Resmi Desa Sukagalih", desc: "TMT 01 Januari 1979, Desa Sukagalih resmi berdiri sebagai desa otonom dipimpin Kepala Desa pertama Bpk. Sadeli." },
+      { year: "1979 - 1992", title: "Kepemimpinan Bpk. Sadeli", desc: "Masa bakti 2 periode meletakkan fondasi infrastruktur dasar dan tata ruang persawahan desa." },
+      { year: "1992 - 1997", title: "Kepemimpinan Bpk. Kundang Siswara", desc: "Peningkatan saluran irigasi pertanian dan penguatan lembaga kemasyarakatan." },
+      { year: "1997 - 2000", title: "Kepemimpinan Bpk. Ano Karno", desc: "Pengembangan sarana transportasi desa dan jalan penghubung antardusun." },
+      { year: "2000 - 2007", title: "Kepemimpinan Bpk. Asep Suryaman, SP", desc: "Modernisasi pertanian, pembentukan kelompok tani terpadu, dan sarana pendidikan dasar." },
+      { year: "2007 - 2013", title: "Kepemimpinan Bpk. Nanang Sunarli", desc: "Pembangunan sarana prasarana desa dan penguatan ekonomi kerakyatan." },
+      { year: "2013 - 2018", title: "Kepemimpinan Bpk. Rajak Prihatnadi, PW, SP", desc: "Percepatan pembangunan lingkungan dan penguatan tata kelola pemerintahan desa." },
+      { year: "2018 - 2025/Sekarang", title: "Kepemimpinan Bpk. Warman (2 Periode)", desc: "Era digitalisasi desa, pemerataan infrastruktur 4 dusun, pembinaan UMKM, dan penguatan kemandirian ekonomi desa." },
+    ]
+  },
+
+  // Visi & Misi Resmi
+  visionMission: {
+    vision: "Desa Membangun secara Merata, Komprehensif di Segala Bidang",
+    visionNote: "Visi ini dijabarkan dari Dokumen RPJM Desa Sukagalih sebagai pedoman seluruh rencana program pembangunan desa yang partisipatif dan berkesinambungan.",
+    missions: [
+      {
+        no: "01",
+        title: "Pemberdayaan SDM Religius",
+        desc: "Membangun Sumber Daya Manusia yang religius, berakhlak mulia, dan berpendidikan melalui penguatan sarana keagamaan dan pembinaan generasi muda."
+      },
+      {
+        no: "02",
+        title: "Pembangunan Sistematis & Musyawarah",
+        desc: "Menginventarisir sasaran pembangunan yang diperlukan secara sistematis melalui mekanisme musyawarah dengan masyarakat di tiap-tiap dusun dan RW."
+      },
+      {
+        no: "03",
+        title: "Pengembangan Potensi Lokal & Kesejahteraan",
+        desc: "Menggali potensi wilayah Desa Sukagalih (pertanian, perikanan, UMKM, dan alam) serta mengembangkannya untuk kemakmuran dan kesejahteraan warga."
+      },
+      {
+        no: "04",
+        title: "Aparatur Desa Profesional & Akuntabel",
+        desc: "Meningkatkan kinerja aparatur desa yang proporsional, akuntabel, transparan, dan berorientasi pada pelayanan prima kepada masyarakat."
+      },
+      {
+        no: "05",
+        title: "Sinergi Lembaga & Karang Taruna",
+        desc: "Meningkatkan peran aktif Karang Taruna, PKK, RT/RW, dan kelompok masyarakat dalam setiap tahapan pembangunan desa."
+      }
+    ]
+  },
+
+  // Geografis & Wilayah
+  geography: {
+    totalAreaHa: 174,
+    elevation: "400 - 450 mdpl",
+    landType: "Tanah Darat, Persawahan Subur, dan Kolam Air Tawar",
+    distanceToDistrict: "4 Km (Kecamatan Sukaratu)",
+    distanceToRegency: "16 Km (Ibu Kota Kab. Tasikmalaya - Jalan Hotmix)",
+    borders: {
+      north: "Desa Sukasukur & Desa Sukajadi (Kecamatan Cisayong)",
+      south: "Desa Sukamahi & Desa Sukaratu (Kecamatan Sukaratu)",
+      east: "Kel. Sukamajukidul & Sukamajukaler (Kecamatan Indihiang)",
+      west: "Desa Indrajaya (Kecamatan Sukaratu)"
+    },
+    landUse: [
+      { type: "Pertanian", areaHa: 100, percentage: 57.5, color: "#3F7D3A" },
+      { type: "Pemukiman", areaHa: 47, percentage: 27.0, color: "#8BCF7A" },
+      { type: "Perikanan Kolam", areaHa: 17, percentage: 9.8, color: "#5FAF52" },
+      { type: "Peternakan", areaHa: 10, percentage: 5.7, color: "#244A2A" }
+    ],
+    dusun: [
+      {
+        name: "Dusun Cikatubang",
+        areaHa: 50,
+        population: 1599,
+        male: 819,
+        female: 780,
+        kk: 535,
+        krt: 365,
+        kadus: "Saepudin",
+        desc: "Pusat pemerintahan desa, hamparan pertanian produktif, dan sentra kolam perikanan air tawar."
+      },
+      {
+        name: "Dusun Sindanggalih",
+        areaHa: 50,
+        population: 1550,
+        male: 800,
+        female: 750,
+        kk: 420,
+        krt: 357,
+        kadus: "Kokon Purkonudin",
+        desc: "Kawasan pemukiman dinamis, sentra UMKM kerajinan, dan kelembagaan pertanian aktif."
+      },
+      {
+        name: "Dusun Sindangkerta",
+        areaHa: 40,
+        population: 910,
+        male: 500,
+        female: 410,
+        kk: 324,
+        krt: 191,
+        kadus: "W. Dartiwa",
+        desc: "Area perbukitan hijau asri dengan komoditas palawija, perkebunan, dan peternakan rakyat."
+      },
+      {
+        name: "Dusun Parakankawung",
+        areaHa: 34,
+        population: 800,
+        male: 400,
+        female: 400,
+        kk: 264,
+        krt: 193,
+        kadus: "Nyanyang Abudin",
+        desc: "Lanskap sawah terasering berteras yang memesona, sumber mata air jernih, dan peternakan."
+      }
+    ]
+  },
+
+  // Data Demografi Resmi (Total 5.237 Jiwa)
+  demographics: {
+    totalPopulation: 5237,
+    malePopulation: 2684,
+    femalePopulation: 2553,
+    totalKK: 1865,
+    maleKK: 1407,
+    femaleKK: 458,
+    totalKRT: 1106,
+    maleKRT: 800,
+    femaleKRT: 306,
+    totalDusun: 4,
+    totalRW: 8,
+    totalRT: 23,
+
+    // Distribusi Usia Penduduk
+    ageGroups: [
+      { range: "00-04 Thn", male: 257, female: 349, total: 606 },
+      { range: "05-12 Thn", male: 202, female: 216, total: 418 },
+      { range: "13-15 Thn", male: 164, female: 143, total: 307 },
+      { range: "16-19 Thn", male: 140, female: 179, total: 319 },
+      { range: "20-24 Thn", male: 143, female: 145, total: 288 },
+      { range: "25-29 Thn", male: 132, female: 132, total: 264 },
+      { range: "30-34 Thn", male: 239, female: 101, total: 340 },
+      { range: "35-39 Thn", male: 142, female: 140, total: 282 },
+      { range: "40-44 Thn", male: 138, female: 120, total: 258 },
+      { range: "45-49 Thn", male: 139, female: 120, total: 259 },
+      { range: "50-54 Thn", male: 156, female: 119, total: 275 },
+      { range: "55-59 Thn", male: 132, female: 120, total: 252 },
+      { range: "60-64 Thn", male: 149, female: 107, total: 256 },
+      { range: "65-69 Thn", male: 130, female: 111, total: 241 },
+      { range: "70-74 Thn", male: 134, female: 106, total: 240 },
+      { range: ">75 Thn", male: 122, female: 132, total: 254 }
+    ],
+
+    // Tingkat Pendidikan
+    education: [
+      { level: "SLTP / Sederajat", count: 1737, color: "#3F7D3A" },
+      { level: "SD / Sederajat", count: 1536, color: "#5FAF52" },
+      { level: "TK / PAUD", count: 1353, color: "#8BCF7A" },
+      { level: "SLTA / Sederajat", count: 100, color: "#244A2A" },
+      { level: "Sarjana (S1)", count: 78, color: "#18331d" },
+      { level: "Diploma (D3)", count: 38, color: "#72bf60" },
+      { level: "Magister (S2)", count: 6, color: "#489640" }
+    ],
+
+    // Mata Pencaharian Penduduk
+    occupations: [
+      { job: "Buruh Harian Lepas", count: 300 },
+      { job: "Pedagang / Warung", count: 150 },
+      { job: "Karyawan Swasta", count: 100 },
+      { job: "Peternak & Perikanan", count: 90 },
+      { job: "Pengrajin Lokal", count: 50 },
+      { job: "Jasa & Transportasi", count: 50 },
+      { job: "Wiraswasta", count: 50 },
+      { job: "Pegawai Negeri Sipil (PNS)", count: 41 },
+      { job: "Pensiunan", count: 13 },
+      { job: "Petani Mandiri", count: 10 },
+      { job: "Tenaga Honorer", count: 7 },
+      { job: "TNI / POLRI", count: 2 }
+    ]
+  },
+
+  // Pemerintahan & Lembaga Desa (Nomor Telepon Pribadi Tidak Dicantumkan)
+  government: {
+    headOfVillage: {
+      name: "Warman",
+      title: "Kepala Desa Sukagalih",
+      period: "2018 - Sekarang (Periode Ke-2)",
+      education: "SLTA",
+      birthDate: "Tasikmalaya, 06-11-1971"
+    },
+    secretary: {
+      name: "Utep",
+      title: "Sekretaris Desa",
+      education: "SLTA",
+      birthDate: "Tasikmalaya, 15-01-1973"
+    },
+    staff: [
+      { name: "Asep Toha", role: "Kaur Perencanaan", edu: "SLTA", dob: "Tsm, 10-10-1969" },
+      { name: "Bambang Turkamto", role: "Kaur TU & Umum", edu: "SLTA", dob: "Tsm, 07-10-1972" },
+      { name: "Imas Yulianingsih", role: "Kaur Keuangan", edu: "SLTA", dob: "Tsm, 18-12-1985" },
+      { name: "Atun Abdulrohim", role: "Kasi Pemerintahan", edu: "SLTA", dob: "Tsm, 12-10-1969", nipd: "19691012 06312006 0005" },
+      { name: "Pipit Puspitasari Dewi", role: "Kasi Kesra", edu: "SLTA", dob: "Tsm, 04-09-1986" },
+      { name: "Utang Sutarman", role: "Kasi Pelayanan", edu: "SLTA", dob: "Tsm, 08-12-1969" },
+      { name: "Saepudin", role: "Kadus Cikatubang", edu: "SLTA", dob: "Tsm, 15-07-1974" },
+      { name: "Kokon Purkonudin", role: "Kadus Sindanggalih", edu: "SLTA", dob: "Tsm, 14-03-1965" },
+      { name: "W. Dartiwa", role: "Kadus Sindangkerta", edu: "SLTA", dob: "Tsm, 10-10-1980" },
+      { name: "Nyanyang Abudin", role: "Kadus Parakankawung", edu: "SLTA", dob: "Tsm, 04-09-1975" },
+      { name: "Windi Wardini", role: "Staf Kesejahteraan", edu: "SLTA", dob: "Pdgl, 15-06-1991" },
+      { name: "Yosep Awaludin", role: "Staf Pemerintahan", edu: "SLTA", dob: "Cnjr, 31-01-1986" },
+      { name: "Whisnusyah Ibrahim", role: "Staf Perencanaan", edu: "SLTA", dob: "Bdg, 21-03-1981" }
+    ],
+
+    // Badan Permusyawaratan Desa (BPD)
+    bpd: [
+      { name: "Tatan Cantaka Bahtiar, BA", role: "Ketua BPD", edu: "SLTA", dob: "Tsm, 04-03-1965" },
+      { name: "Wawan Setiawan", role: "Wakil Ketua BPD", edu: "SLTA", dob: "Tsm, 14-03-1981" },
+      { name: "Lili Dahli", role: "Sekretaris BPD", edu: "SLTA", dob: "Tsm, 19-10-1949" },
+      { name: "Sintia Ratnasari", role: "Bendahara BPD", edu: "SLTA", dob: "Tsm, 21-01-1992" },
+      { name: "Ateng Nurdin", role: "Bidang Pemerintahan", edu: "SLTA", dob: "Tsm, 09-07-1975" },
+      { name: "Dadang Taryana", role: "Bidang Kemasyarakatan", edu: "SLTA", dob: "Bdg, 15-04-1964" },
+      { name: "Andi Hidayat", role: "Bidang Pembangunan", edu: "SLTA", dob: "Tsm, 21-03-1984" }
+    ],
+
+    // Lembaga Pertanian & Gapoktan
+    agricultureGroups: [
+      { name: "GAPOKTAN Galih Mukti", ketua: "Tatang Ruhiyat", sekretaris: "Atun Abdulrohim", bendahara: "Lili Dahli", lokasi: "Desa Sukagalih" },
+      { name: "Poktan Pada Suka Sarengkol", ketua: "Sambas Abdul Farid", sekretaris: "Tatang Somantri", bendahara: "Asep Suryaman, SP", lokasi: "Kp. Sarengkol" },
+      { name: "Poktan Daya Remaja", ketua: "Jalaludin", sekretaris: "Rida Faujiah", bendahara: "Atun Abdulrohim", lokasi: "Kp. Cikatubang / Tolenjeng" },
+      { name: "Poktan Jaya Makmur", ketua: "Tatan Cantaka Bahtiar", sekretaris: "Lili Dahli", bendahara: "Kokon Purkonudin", lokasi: "Kp. Sindanggalih" },
+      { name: "Poktan Kerta Raharja", ketua: "Ediyanto Ruswiandi", sekretaris: "Dindin Rosidin Husna, S.IP", bendahara: "Ence Nurman", lokasi: "Kp. Sindangkerta" },
+      { name: "Poktan Tunas Jaya", ketua: "Tatang Ruhiyat", sekretaris: "Yudi Iswahyudi", bendahara: "Enjah", lokasi: "Kp. Parakankawung" },
+      { name: "KWT Mekar Rahayu (Wanita Tani)", ketua: "Dra. Atih", sekretaris: "Erna Karnia", bendahara: "Dede Erwina Hasyim", lokasi: "Kp. Cikatubang" },
+      { name: "KWT Melati", ketua: "Hj. Dadah", sekretaris: "Rosyani", bendahara: "Patmasari", lokasi: "Kp. Sarengkol" },
+      { name: "Padepokan Kabuyutan Tolenjeng", ketua: "Atun Abdulrohim", sekretaris: "Wisnu Ibrahim", bendahara: "Budi Setiawan", lokasi: "Kp. Cikatubang / Tolenjeng" }
+    ],
+
+    // Sarana Keagamaan (DKM Masjid)
+    mosques: [
+      { name: "DKM Nurul Awaliyah", ketua: "H. Romya", dusun: "Cikatubang", kampung: "Sarengkol", rt: "001", rw: "001" },
+      { name: "DKM Nurul Hidayah", ketua: "H. Yusup", dusun: "Cikatubang", kampung: "Cikatubang", rt: "005", rw: "002" },
+      { name: "DKM Al-Pur'qon", ketua: "Feri Purnama", dusun: "Cikatubang", kampung: "Cikatubang", rt: "005", rw: "002" },
+      { name: "DKM Istiqomah", ketua: "H. Dadan M", dusun: "Sindanggalih", kampung: "Sindanggalih", rt: "009", rw: "003" },
+      { name: "DKM Al-Mukaromah", ketua: "Saepul Ahyar, S.IP", dusun: "Sindanggalih", kampung: "Sindanggalih", rt: "013", rw: "005" },
+      { name: "DKM Nurul Huda", ketua: "Miftah Farid", dusun: "Sindangkerta", kampung: "Sindangkerta", rt: "017", rw: "007" },
+      { name: "DKM Nurul Iman", ketua: "Deden Sutisna", dusun: "Sindangkerta", kampung: "Sindangkerta", rt: "018", rw: "007" },
+      { name: "DKM Darussalam", ketua: "Anwar Sanusi", dusun: "Parakankawung", kampung: "Parakankawung", rt: "021", rw: "008" }
+    ],
+
+    // Lembaga MUI & DMI
+    religiousLeaders: {
+      muiKetua: "Rojikin",
+      dmiKetua: "Miftah Farid",
+      dmiSekretaris: "Abdul Aziz",
+      dmiBendahara: "Jajang Hidayat"
+    }
+  },
+
+  // 6 Sektor Potensi Desa
+  potentials: [
+    {
+      id: "pertanian",
+      icon: "🌱",
+      title: "Pertanian & Hasil Bumi",
+      tagline: "Lumbung Padi Subur Berkah Vulkanik Galunggung",
+      desc: "Dengan luas lahan pertanian 100 Ha, Sukagalih menghasilkan padi organik berkualitas tinggi, palawija segar, ubi jalar, sayuran hijau, dan jagung manis yang dialiri air pegunungan alami.",
+      metrics: "100 Ha Lahan Produktif • 5 Poktan Aktif",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: "perikanan",
+      icon: "🐟",
+      title: "Perikanan Kolam Air Tawar",
+      tagline: "Budidaya Nila, Gurame & Ikan Mas Berkualitas",
+      desc: "Memanfaatkan 17 Ha kolam air tawar dengan sistem pengairan alami yang jernih, memproduksi ikan konsumsi segar untuk kebutuhan pasar lokal Tasikmalaya dan sekitarnya.",
+      metrics: "17 Ha Kolam Air Tawar • 90 Pembudidaya",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: "lingkungan",
+      icon: "🌳",
+      title: "Lingkungan & Alam Asri",
+      tagline: "Kesejukan Udara & Lanskap Hijau Kaki Galunggung",
+      desc: "Terletak pada elevasi 400-450 mdpl, Desa Sukagalih diberkahi iklim sejuk, mata air alami yang melimpah, panorama sawah bertingkat, dan pepohonan rindang yang lestari.",
+      metrics: "450 mdpl • 100% Suasana Pegunungan",
+      image: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: "umkm",
+      icon: "🛍️",
+      title: "UMKM & Olahan Pangan",
+      tagline: "Produk Olahan Tradisional Bernilai Tambah",
+      desc: "Pemberdayaan usaha mikro warga mulai dari olahan keripik pisang, sale pisang khas Tasikmalaya, gula aren murni, rempah-rempah olahan, hingga aneka olahan hasil perikanan.",
+      metrics: "50+ Pelaku Usaha • Berdaya Mandiri",
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: "wisata",
+      icon: "🏡",
+      title: "Potensi Wisata & Edukasi",
+      tagline: "Ekowisata Sawah, Mata Air & Jalur Trekking",
+      desc: "Menawarkan potensi wisata pedesaan berbasis alam: tracking pematang sawah Parakankawung, kesegaran mata air Cikatubang, wisata pemancingan keluarga, dan kearifan lokal Sunda.",
+      metrics: "4 Destinasi Potensial • Wisata Ramah Keluarga",
+      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: "kerajinan",
+      icon: "🎨",
+      title: "Kerajinan & Budaya Lokal",
+      tagline: "Karya Anyaman Bambu & Tradisi Gotong Royong",
+      desc: "Keterampilan tangan masyarakat dalam seni anyaman bambu, peralatan dapur tradisional ramah lingkungan, serta pelestarian seni budaya sunda di Padepokan Kabuyutan Tolenjeng.",
+      metrics: "50 Pengrajin • Warisan Budaya Lestari",
+      image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=80"
+    }
+  ],
+
+  // Featured Story (Cerita dari Tanah Sukagalih)
+  featuredStory: {
+    title: "Cerita dari Tanah Sukagalih: Berkah Kesuburan Lereng Galunggung",
+    subtitle: "Harmoni Alam, Air Jernih, dan Semangat Gotong Royong yang Menghidupi 4 Dusun",
+    content: "Di bawah naungan kemegahan Gunung Galunggung, tanah Sukagalih telah berabad-abad menjadi sumber kehidupan yang menyejahterakan warganya. Melalui pemekaran resmi sejak 1979, empat kepunduhan—Cikatubang, Sindanggalih, Sindangkerta, dan Parakankawung—tumbuh menjadi ekosistem agraris yang tangguh. Aliran air jernih tanpa henti membasahi 100 hektar sawah produktif dan menghidupi belasan hektar kolam perikanan air tawar. Kini, semangat tradisi tersebut bertransformasi melalui digitalisasi desa bersama KKN 2026 Universitas BTH, membuka pintu promosi potensi lokal ke panggung nasional.",
+    highlightStats: [
+      { label: "Luas Pertanian", value: "100 Ha" },
+      { label: "Warga Produktif", value: "5.237 Jiwa" },
+      { label: "Elevasi Sejuk", value: "450 mdpl" },
+      { label: "Dusun Bersatu", value: "4 Kepunduhan" }
+    ],
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+  },
+
+  // Direktori UMKM Desa Sukagalih
+  umkm: [
+    {
+      id: "beras-organik-sukagalih",
+      name: "Beras Organik Galunggung Sukagalih",
+      umkmName: "Poktan Jaya Makmur",
+      category: "Pertanian",
+      price: "Rp 16.000 / kg",
+      priceNum: 16000,
+      badge: "Produk Unggulan",
+      rating: 4.9,
+      sold: "850+ kg",
+      location: "Dusun Sindanggalih, RT 11 RW 04",
+      whatsapp: "6281323690168",
+      desc: "Beras putih premium organik yang dipanen dari sawah terasering Sukagalih. Dialiri mata air murni pegunungan tanpa pestisida kimia berbahaya, menghasilkan nasi yang pulen, wangi alami, dan kaya nutrisi.",
+      image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "ikan-nila-segar",
+      name: "Ikan Nila & Gurame Kolam Segar",
+      umkmName: "Mina Sejahtera Cikatubang",
+      category: "Pertanian",
+      price: "Rp 32.000 / kg",
+      priceNum: 32000,
+      badge: "Segar Harian",
+      rating: 4.8,
+      sold: "1.2 Ton/Bulan",
+      location: "Dusun Cikatubang, Kp. Sarengkol",
+      whatsapp: "6281323690168",
+      desc: "Ikan nila merah, nila hitam, dan gurame segar hasil budidaya kolam air mengalir Sukagalih. Daging tebal, manis alami tanpa bau lumpur, siap antar hidup atau dalam bentuk filet bersih siap masak.",
+      image: "https://images.unsplash.com/photo-1534043464124-3be32fe00099?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "kopi-robusta-sukagalih",
+      name: "Kopi Robusta Lereng Galunggung",
+      umkmName: "Kopi Karta Raharja",
+      category: "Minuman",
+      price: "Rp 35.000 / 250gr",
+      priceNum: 35000,
+      badge: "Aroma Khas",
+      rating: 4.9,
+      sold: "420 bungkus",
+      location: "Dusun Sindangkerta, RT 18 RW 07",
+      whatsapp: "6281323690168",
+      desc: "Biji kopi robusta pilihan yang ditanam pada lereng perbukitan Sukagalih di ketinggian 450 mdpl. Diolah melalui proses medium roast tradisional menghasilkan cita rasa bold cokelat dan karamel alami.",
+      image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gula-aren-murni",
+      name: "Gula Aren Asli Cetak & Semut",
+      umkmName: "Pengrajin Aren Parakankawung",
+      category: "Makanan",
+      price: "Rp 25.000 / bungkus",
+      priceNum: 25000,
+      badge: "100% Organik",
+      rating: 5.0,
+      sold: "600+ bungkus",
+      location: "Dusun Parakankawung, RT 22 RW 08",
+      whatsapp: "6281323690168",
+      desc: "Nira pohon aren alami yang disadap langsung setiap pagi oleh warga Dusun Parakankawung. Dimasak dengan kayu bakar tanpa campuran gula putih atau bahan pengawet sintetik.",
+      image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "sale-pisang-renyah",
+      name: "Sale Pisang Basah & Keripik Renyah",
+      umkmName: "KWT Melati Sarengkol",
+      category: "Makanan",
+      price: "Rp 15.000 / 200gr",
+      priceNum: 15000,
+      badge: "Camilan Tradisional",
+      rating: 4.7,
+      sold: "980 pack",
+      location: "Kp. Sarengkol, Dusun Cikatubang",
+      whatsapp: "6281323690168",
+      desc: "Olahan pisang siem matang pohon yang diasapi secara tradisional kemudian digoreng tepung renyah atau disajikan dalam bentuk sale basah manis legit khas priangan timur.",
+      image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "kerajinan-anyaman-bambu",
+      name: "Kerajinan Besek & Anyaman Bambu Kreatif",
+      umkmName: "Karya Seni Bambu Sindanggalih",
+      category: "Kerajinan",
+      price: "Rp 8.000 - Rp 75.000",
+      priceNum: 8000,
+      badge: "Eco-Friendly",
+      rating: 4.8,
+      sold: "1.500+ pcs",
+      location: "Dusun Sindanggalih, RT 14 RW 05",
+      whatsapp: "6281323690168",
+      desc: "Produk wadah ramah lingkungan berbahan bambu tali pilihan: besek makanan hantaran, boboko, bakul nasi modern, kap lampu etnik, dan wadah suvenir ramah lingkungan.",
+      image: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "madu-hutan-odeng",
+      name: "Madu Alami Lebah Sukagalih",
+      umkmName: "Madu Hutan Galunggung",
+      category: "Minuman",
+      price: "Rp 85.000 / 350ml",
+      priceNum: 85000,
+      badge: "Madu Murni",
+      rating: 4.9,
+      sold: "310 botol",
+      location: "Dusun Sindangkerta, Kp. Tolenjeng",
+      whatsapp: "6281323690168",
+      desc: "Madu mentah (raw honey) murni dari nektar bunga liar di kawasan perbukitan Sukagalih. Kaya enzim aktif dan antioksidan, tanpa pemanasan dan tanpa zat tambahan.",
+      image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "sambal-terasi-kwt",
+      name: "Sambal Terasi & Olahan Rempah Siap Saji",
+      umkmName: "KWT Mekar Rahayu Cikatubang",
+      category: "Makanan",
+      price: "Rp 22.000 / toples",
+      priceNum: 22000,
+      badge: "Pedas Gurih",
+      rating: 4.8,
+      sold: "530 toples",
+      location: "Dusun Cikatubang, RT 06 RW 02",
+      whatsapp: "6281323690168",
+      desc: "Sambal olahan kelompok wanita tani menggunakan cabai rawit merah segar dari kebun pekarangan warga, dipadukan terasi Tasikmalaya berkualitas dan rempah pilihan.",
+      image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+
+  // Destinasi & Potensi Wisata Desa
+  tourism: [
+    {
+      id: "mata-air-cikatubang",
+      name: "Sumber Mata Air Alami Cikatubang",
+      category: "Wisata Alam & Pemandian",
+      location: "Dusun Cikatubang, Desa Sukagalih",
+      hours: "Setiap Hari (06.00 - 17.30 WIB)",
+      ticket: "Gratis / Donasi Kebersihan",
+      facilities: ["Kolam Alami Jernih", "Area Bilas", "Warung Warga", "Parkir Roda Dua & Empat", "Mushola"],
+      desc: "Mata air alami yang keluar dari celah bebatuan vulkanik kaki Gunung Galunggung dengan debit air konstan sepanjang tahun. Airnya sangat jernih, dingin, dan menyegarkan tubuh.",
+      image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80",
+      mapsQuery: "Mata Air Cikatubang Sukagalih Sukaratu Tasikmalaya"
+    },
+    {
+      id: "terasering-parakankawung",
+      name: "Agrowisata Terasering Parakankawung",
+      category: "Agrowisata & Fotografi",
+      location: "Dusun Parakankawung, Desa Sukagalih",
+      hours: "Setiap Hari (06.00 - 18.00 WIB)",
+      ticket: "Gratis",
+      facilities: ["Gazebo Pematang Sawah", "Spot Foto Sunset", "Jalur Jogging Sawah", "Kedai Kopi Lokal"],
+      desc: "Hamparan sawah berundak-undak yang hijau memesona dengan latar megahnya siluet perbukitan Sukaratu. Sangat cocok untuk berjalan santai di pagi hari, bersepeda, dan berfoto.",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
+      mapsQuery: "Parakankawung Sukagalih Sukaratu Tasikmalaya"
+    },
+    {
+      id: "lembah-sindanggalih",
+      name: "Lembah Hijau & Spot Sunrise Sindanggalih",
+      category: "Panorama & Camping Ground",
+      location: "Dusun Sindanggalih, Desa Sukagalih",
+      hours: "Buka 24 Jam (Izin Pengelola untuk Camp)",
+      ticket: "Rp 5.000 / orang",
+      facilities: ["Area Camping", "Toilet Bersih", "Sumber Air Bersih", "Penerangan Tenaga Surya", "Keamanan 24 Jam"],
+      desc: "Titik pandang perbukitan yang menyajikan panorama matahari terbit dengan kabut tipis yang menyelimuti lembah desa Sukaratu. Udara yang sangat sejuk memberikan ketenangan batin.",
+      image: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=800&q=80",
+      mapsQuery: "Sindanggalih Sukaratu Tasikmalaya"
+    },
+    {
+      id: "padepokan-kabuyutan-tolenjeng",
+      name: "Situs Budaya & Padepokan Kabuyutan Tolenjeng",
+      category: "Wisata Budaya & Edukasi",
+      location: "Kp. Cikatubang / Tolenjeng, Desa Sukagalih",
+      hours: "Senin - Sabtu (08.00 - 17.00 WIB)",
+      ticket: "Donasi Sukarela",
+      facilities: ["Bale Pertemuan Sunda", "Pemandu Sejarah Lokal", "Area Parkir", "Mushola"],
+      desc: "Pusat pelestarian kearifan lokal, sejarah pemukiman tua, dan kegiatan kebudayaan Sunda di bawah bimbingan sesepuh dan tokoh masyarakat Sukagalih.",
+      image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+      mapsQuery: "Kabuyutan Tolenjeng Sukagalih Sukaratu Tasikmalaya"
+    }
+  ],
+
+  // Berita & Kabar Terkini Sukagalih
+  news: [
+    {
+      id: "peluncuran-website-digital-kkn-bth",
+      title: "Peluncuran Website Digital Resmi Desa Sukagalih bersama Mahasiswa KKN 2026 Universitas BTH",
+      category: "KKN",
+      date: "12 Agustus 2026",
+      author: "Tim Redaksi Desa & Tim KKN BTH 09",
+      excerpt: "Pemerintah Desa Sukagalih secara resmi mengadopsi platform website digital karya kolaborasi bersama 19 mahasiswa KKN Kelompok 09 Universitas Bakti Tunas Husada (BTH) Tasikmalaya untuk keterbukaan informasi publik dan promosi potensi desa.",
+      content: `Pemerintah Desa Sukagalih, Kecamatan Sukaratu, Kabupaten Tasikmalaya mencatatkan langkah bersejarah dalam transformasi digital pelayanan publik dengan meluncurkan platform website resmi desa.\n\nInisiatif ini merupakan hasil kolaborasi intensif program kerja 19 mahasiswa KKN Kelompok 09 Universitas Bakti Tunas Husada (BTH) Tasikmalaya Periode 2026 di bawah koordinasi Ketua Kordes Regha Agusta Pratama, Wakil Kordes Muhammad Akbar Alfi Fauzan, tim Humas Akhmad Galfin Manaf & Nikeu Rahayu, Divisi PDD, Acara, Logistik, dan Konsumsi bersama jajaran aparatur Pemerintah Desa di bawah kepemimpinan Kepala Desa Warman.\n\nWebsite ini memuat data kependudukan resmi, direktori UMKM terintegrasi pemesanan WhatsApp, profil 4 dusun, transparansi informasi, hingga direktori wisata alam lereng Galunggung. Kepala Desa Warman menyampaikan apresiasi tinggi atas dedikasi para mahasiswa KKN dalam mewujudkan kemandirian digital bagi masyarakat Sukagalih.`,
+      image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "musrenbangdes-sukagalih-2026",
+      title: "Pelaksanaan Musrenbangdes Sukagalih: Prioritaskan Pengairan Sawah dan Pemberdayaan UMKM",
+      category: "Desa",
+      date: "05 Agustus 2026",
+      author: "Pemerintah Desa Sukagalih",
+      excerpt: "Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes) Sukagalih menghasilkan kesepakatan prioritas penguatan jaringan irigasi tersier di Dusun Cikatubang dan Sindanggalih serta permodalan kelompok tani.",
+      content: `Bertempat di Aula Kantor Desa Sukagalih, Pemerintah Desa bersama BPD, Ketua RT/RW se-Desa Sukagalih, dan tokoh masyarakat menggelar Musrenbangdes untuk menyusun rencana kerja pembangunan tahun berjalan.\n\nDalam musyawarah tersebut, usulan warga dari empat kepunduhan diakomodasi secara demokratis dengan penekanan pada pemeliharaan saluran air untuk 100 hektar lahan sawah produktif serta fasilitasi sertifikasi halal dan izin edar bagi produk olahan makanan KWT desa.`,
+      image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "penyaluran-bantuan-poktan-galih-mukti",
+      title: "GAPOKTAN Galih Mukti Sukagalih Salurkan Bibit Unggul & Pupuk Organik ke Petani",
+      category: "Pertanian",
+      date: "28 Juli 2026",
+      author: "Kaur Perencanaan Desa",
+      excerpt: "Sebanyak 5 kelompok tani di Desa Sukagalih menerima alokasi bantuan bibit padi varietas unggul dan pupuk hayati ramah lingkungan guna meningkatkan produktivitas panen raya mendatang.",
+      content: `Gabungan Kelompok Tani (GAPOKTAN) Galih Mukti Desa Sukagalih menyalurkan paket bantuan sarana produksi pertanian kepada ratusan petani yang tersebar di Kp. Sarengkol, Cikatubang, Sindanggalih, Sindangkerta, dan Parakankawung.\n\nKetua GAPOKTAN Tatang Ruhiyat didampingi Sekretaris Atun Abdulrohim menegaskan komitmen desa untuk terus mempertahankan keunggulan Sukagalih sebagai sentra penghasil beras premium berkualitas tinggi di wilayah Tasikmalaya.`,
+      image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "pemeriksaan-kesehatan-gratis-kkn-bth",
+      title: "Mahasiswa KKN BTH Gelar Edukasi Swamedikasi & Pemeriksaan Kesehatan Gratis",
+      category: "KKN",
+      date: "20 Juli 2026",
+      author: "Tim Kesehatan KKN BTH",
+      excerpt: "Ratusan lansia dan masyarakat Desa Sukagalih antusias mengikuti kegiatan cek gula darah, tensi, asam urat, dan konsultasi penggunaan obat yang aman oleh mahasiswa Universitas BTH.",
+      content: `Sebagai wujud kepedulian di bidang kesehatan masyarakat desa, Tim KKN Kelompok 09 Universitas Bakti Tunas Husada mengadakan kegiatan bimbingan kesehatan terpadu dan skrining penyakit tidak menular gratis di Posyandu Melati Dusun Cikatubang.\n\nWarga juga dibekali pengetahuan mengenai budidaya Taman Obat Keluarga (TOGA) seperti jahe merah, temulawak, dan kunyit yang dapat tumbuh subur di pekarangan rumah pedesaan.`,
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gotong-royong-saluran-air-cikatubang",
+      title: "Masyarakat Kompak Gelar Gotong Royong Pembersihan Saluran Air & Lingkungan Dusun",
+      category: "Kegiatan",
+      date: "14 Juli 2026",
+      author: "Kadus Cikatubang",
+      excerpt: "Warga RW 01 dan RW 02 bergotong royong membersihkan sedimentasi saluran irigasi menjelang musim tanam serentak untuk memastikan pasokan air lancar ke seluruh petak sawah.",
+      content: `Nilai luhur gotong royong warga Sukagalih terus terjaga kuat. Puluhan warga bersama anggota Sat-Linmas dan Karang Taruna bahu membahu membersihkan rumput liar dan lumpur endapan di sepanjang aliran irigasi utama Cikatubang.\n\nKegiatan diakhiri dengan tradisi 'Ngaliwet Bareng' beralaskan daun pisang di tepi sawah, mempererat tali silaturahmi antargenerasi.`,
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "pelatihan-branding-umkm-desa",
+      title: "Pelatihan Digital Marketing & Pengemasan Produk UMKM Sukagalih Menembus E-Commerce",
+      category: "UMKM",
+      date: "02 Juli 2026",
+      author: "Tim Digitalisasi KKN",
+      excerpt: "Para pelaku usaha kerajinan bambu, gula aren, dan olahan sale pisang Sukagalih dilatih membuat foto produk menarik serta memanfaatkan WhatsApp Business untuk ekspansi pasar.",
+      content: `Guna meningkatkan nilai jual produk olahan lokal, workshop pengemasan modern dan pencatatan keuangan sederhana diselenggarakan untuk pelaku UMKM Desa Sukagalih.\n\nDengan adanya katalog digital pada website desa, produk-produk unggulan warga kini dapat dipesan langsung oleh pembeli dari berbagai kota dengan integrasi tautan WhatsApp resmi.`,
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+
+  // Agenda / Event Desa
+  events: [
+    {
+      dateDay: "17",
+      dateMonth: "AGUSTUS",
+      year: "2026",
+      title: "Peringatan Hari Kemerdekaan RI & Pesta Rakyat Sukagalih",
+      location: "Lapangan Desa Sukagalih & 4 Dusun",
+      time: "07.30 WIB - Selesai",
+      category: "Perayaan Desa",
+      desc: "Upacara bendera bersama, karnaval seni budaya sunda tiap dusun, lomba rakyat tradisional, dan pameran bazar kuliner UMKM Sukagalih."
+    },
+    {
+      dateDay: "24",
+      dateMonth: "AGUSTUS",
+      year: "2026",
+      title: "Panen Raya Padi & Tasyakuran GAPOKTAN Galih Mukti",
+      location: "Hamparan Sawah Terasering Parakankawung",
+      time: "08.00 - 12.00 WIB",
+      category: "Pertanian",
+      desc: "Kegiatan panen bersama dinas pertanian, apresiasi kelompok tani berprestasi, dan doa bersama kelimpahan rezeki bumi desa."
+    },
+    {
+      dateDay: "05",
+      dateMonth: "SEPTEMBER",
+      year: "2026",
+      title: "Pelayanan Terpadu Posyandu Balita & Lansia Sehat",
+      location: "Poskesdes & Posyandu Tiap RW (RW 01 - RW 08)",
+      time: "08.30 - 11.30 WIB",
+      category: "Kesehatan",
+      desc: "Penimbangan balita, imunisasi dasar lengkap, pemberian makanan tambahan (PMT) bergizi, dan pemeriksaan kesehatan rutin lansia."
+    },
+    {
+      dateDay: "12",
+      dateMonth: "SEPTEMBER",
+      year: "2026",
+      title: "Diseminasi Program Kerja & Expo Karya KKN 2026 BTH",
+      location: "Aula Serbaguna Kantor Desa Sukagalih",
+      time: "09.00 - 14.00 WIB",
+      category: "Akademik / KKN",
+      desc: "Presentasi akhir program kerja 19 mahasiswa KKN BTH, serah terima platform sistem digital desa, dan pameran dokumentasi kegiatan."
+    }
+  ],
+
+  // Galeri Foto & Momen Desa
+  gallery: [
+    {
+      id: "gal-1",
+      title: "Pemandangan Sawah Terasering Kaki Galunggung",
+      category: "Lingkungan",
+      dusun: "Dusun Parakankawung",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-2",
+      title: "Suasana Balai Desa & Pelayanan Ramah Masyarakat",
+      category: "Kegiatan Desa",
+      dusun: "Dusun Cikatubang",
+      image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-3",
+      title: "Budidaya Kolam Ikan Air Tawar Mengalir",
+      category: "UMKM",
+      dusun: "Dusun Cikatubang",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-4",
+      title: "Kerajinan Anyaman Bambu Tradisional Sunda",
+      category: "UMKM",
+      dusun: "Dusun Sindanggalih",
+      image: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-5",
+      title: "Mata Air Jernih Cikatubang Tempat Segar Warga",
+      category: "Wisata",
+      dusun: "Dusun Cikatubang",
+      image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-6",
+      title: "Kolaborasi Mahasiswa KKN BTH bersama Perangkat Desa",
+      category: "KKN",
+      dusun: "Dusun Cikatubang",
+      image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-7",
+      title: "Kegiatan Skrining Kesehatan Lansia oleh Tim Farmasi",
+      category: "KKN",
+      dusun: "Dusun Sindangkerta",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-8",
+      title: "Kehangatan Warga Sukagalih saat Gotong Royong",
+      category: "Masyarakat",
+      dusun: "Dusun Sindanggalih",
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-9",
+      title: "Perkebunan Kopi Robusta & Palawija Subur",
+      category: "Lingkungan",
+      dusun: "Dusun Sindangkerta",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-10",
+      title: "Keceriaan Anak-Anak di Pengajian Maghrib Mengaji",
+      category: "Masyarakat",
+      dusun: "Dusun Parakankawung",
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-11",
+      title: "Pemetikan Daun Teh & Sayuran Segar Pegunungan",
+      category: "Pertanian",
+      dusun: "Dusun Sindangkerta",
+      image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "gal-12",
+      title: "Panorama Kabut Pagi di Perbukitan Sukagalih",
+      category: "Wisata",
+      dusun: "Dusun Sindanggalih",
+      image: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+
+  // Program Kerja & Profil 19 Mahasiswa KKN 2026 Universitas BTH
+  kknInfo: {
+    university: "Universitas Bakti Tunas Husada (BTH) Tasikmalaya",
+    groupName: "Kelompok 09 Desa Sukagalih",
+    period: "KKN Periode 2026",
+    theme: "Digitalisasi Desa, Pemberdayaan Potensi UMKM & Edukasi Kesehatan Masyarakat Berkelanjutan",
+    location: "Desa Sukagalih, Kec. Sukaratu, Kab. Tasikmalaya",
+    supervisor: "Dosen Pembimbing Lapangan (DPL) KKN BTH 2026",
+    totalMembers: 19,
+    description: "Program Kuliah Kerja Nyata (KKN) Kelompok 09 Universitas BTH di Desa Sukagalih berfokus pada pembangunan infrastruktur digital informasi desa, pendampingan pemasaran online produk UMKM lokal, pemetaan potensi wilayah, serta pelayanan kesehatan dan edukasi bagi masyarakat desa.",
+    programs: [
+      {
+        title: "Digitalisasi & Sistem Informasi Desa",
+        icon: "💻",
+        desc: "Membangun website resmi modern yang dapat diakses publik untuk profil desa, transparansi data kependudukan, peta wilayah, dan layanan kontak warga."
+      },
+      {
+        title: "Digitalisasi & Branding UMKM",
+        icon: "📈",
+        desc: "Mendampingi kelompok wanita tani (KWT) dan pelaku usaha lokal dalam pembuatan katalog digital, foto produk, dan integrasi pemesanan WhatsApp."
+      },
+      {
+        title: "Dokumentasi & Promosi Potensi Desa",
+        icon: "📷",
+        desc: "Mendokumentasikan lanskap alam, agrowisata terasering, mata air Cikatubang, dan kearifan lokal dalam bentuk media digital interaktif."
+      },
+      {
+        title: "Edukasi Swamedikasi & Kesehatan Terpadu",
+        icon: "🩺",
+        desc: "Menyelenggarakan cek kesehatan gratis, penyuluhan penggunaan obat rasional (DAGUSIBU), dan pembinaan Taman Obat Keluarga (TOGA)."
+      }
+    ],
+    // 19 Anggota KKN Kelompok 09 Universitas BTH
+    members: [
+      {
+        name: "Regha Agusta Pratama",
+        role: "Ketua Koordinator Desa (Kordes)",
+        division: "Pimpinan",
+        avatar: "👨‍💼",
+        badgeColor: "#3F7D3A"
+      },
+      {
+        name: "Muhammad Akbar Alfi Fauzan",
+        role: "Wakil Ketua Kordes",
+        division: "Pimpinan",
+        avatar: "👨‍💼",
+        badgeColor: "#3F7D3A"
+      },
+      {
+        name: "Suwandika",
+        role: "Sekretaris",
+        division: "Sekretariat",
+        avatar: "📝",
+        badgeColor: "#5FAF52"
+      },
+      {
+        name: "Cindy",
+        role: "Sekretaris",
+        division: "Sekretariat",
+        avatar: "📝",
+        badgeColor: "#5FAF52"
+      },
+      {
+        name: "Luthfiyah Nabilah",
+        role: "Bendahara",
+        division: "Keuangan",
+        avatar: "💼",
+        badgeColor: "#244A2A"
+      },
+      {
+        name: "Resi Aulia Azhari",
+        role: "Bendahara",
+        division: "Keuangan",
+        avatar: "💼",
+        badgeColor: "#244A2A"
+      },
+      {
+        name: "Akhmad Galfin Manaf",
+        role: "Humas",
+        division: "Humas",
+        avatar: "📢",
+        badgeColor: "#8BCF7A"
+      },
+      {
+        name: "Nikeu Rahayu",
+        role: "Humas",
+        division: "Humas",
+        avatar: "📢",
+        badgeColor: "#8BCF7A"
+      },
+      {
+        name: "Agung Gumilang",
+        role: "Divisi PDD",
+        division: "PDD",
+        avatar: "📸",
+        badgeColor: "#3F7D3A"
+      },
+      {
+        name: "Syira Wafiatun Naida",
+        role: "Divisi PDD",
+        division: "PDD",
+        avatar: "🎨",
+        badgeColor: "#3F7D3A"
+      },
+      {
+        name: "Naila Naziba",
+        role: "Divisi Acara",
+        division: "Acara",
+        avatar: "🎯",
+        badgeColor: "#5FAF52"
+      },
+      {
+        name: "Suci Intan Salimah",
+        role: "Divisi Acara",
+        division: "Acara",
+        avatar: "🎯",
+        badgeColor: "#5FAF52"
+      },
+      {
+        name: "Yeni Meilani",
+        role: "Divisi Acara",
+        division: "Acara",
+        avatar: "🎯",
+        badgeColor: "#5FAF52"
+      },
+      {
+        name: "Alda Nur Arifin",
+        role: "Divisi Logistik",
+        division: "Logistik",
+        avatar: "📦",
+        badgeColor: "#244A2A"
+      },
+      {
+        name: "Eva Sucianti",
+        role: "Divisi Logistik",
+        division: "Logistik",
+        avatar: "📦",
+        badgeColor: "#244A2A"
+      },
+      {
+        name: "Hafizha Nur Shaleha",
+        role: "Divisi Logistik",
+        division: "Logistik",
+        avatar: "📦",
+        badgeColor: "#244A2A"
+      },
+      {
+        name: "Salwa Fitrian",
+        role: "Divisi Logistik",
+        division: "Logistik",
+        avatar: "📦",
+        badgeColor: "#244A2A"
+      },
+      {
+        name: "Hasna Nada Haya",
+        role: "Divisi Konsumsi",
+        division: "Konsumsi",
+        avatar: "🍱",
+        badgeColor: "#8BCF7A"
+      },
+      {
+        name: "Nuraeni",
+        role: "Divisi Konsumsi",
+        division: "Konsumsi",
+        avatar: "🍱",
+        badgeColor: "#8BCF7A"
+      }
+    ]
+  }
+};
+
+if (typeof window !== 'undefined') {
+  window.SukagalihData = SukagalihData;
+}
+
+  </script>
+  <script>
+/**
+ * Modul Visualisasi Data & Statistik Desa Sukagalih menggunakan Chart.js
+ * Color Palette disesuaikan dengan Warna Resmi Logo Desa Sukagalih & KKN BTH:
+ * - Deep Navy (#15284F)
+ * - Forest Green (#15803D)
+ * - Golden Rice (#EAB308)
+ * - Sky Blue (#0284C7)
+ * - Fresh Green (#22C55E)
+ */
+
+const SukagalihCharts = {
+  instances: {},
+
+  initAll() {
+    if (typeof Chart === 'undefined') return;
+
+    this.renderDusunChart();
+    this.renderGenderChart();
+    this.renderEducationChart();
+    this.renderAgeChart();
+    this.renderOccupationChart();
+    this.renderLandUseChart();
+  },
+
+  destroyAll() {
+    Object.keys(this.instances).forEach(key => {
+      if (this.instances[key]) {
+        this.instances[key].destroy();
+        delete this.instances[key];
+      }
+    });
+  },
+
+  // 1. Distribusi Penduduk per Dusun
+  renderDusunChart() {
+    const ctx = document.getElementById('chartDusun');
+    if (!ctx) return;
+
+    const data = SukagalihData.geography.dusun;
+    this.instances.dusun = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: data.map(d => d.name),
+        datasets: [{
+          data: data.map(d => d.population),
+          backgroundColor: ['#15284F', '#15803D', '#EAB308', '#0284C7'],
+          borderColor: '#FFFFFF',
+          borderWidth: 2,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 14, font: { family: 'Plus Jakarta Sans', size: 12 } } },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.label}: ${context.parsed.toLocaleString('id-ID')} Jiwa`
+            }
+          }
+        },
+        cutout: '65%'
+      }
+    });
+  },
+
+  // 2. Perbandingan Jenis Kelamin
+  renderGenderChart() {
+    const ctx = document.getElementById('chartGender');
+    if (!ctx) return;
+
+    const demo = SukagalihData.demographics;
+    this.instances.gender = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Laki-laki', 'Perempuan'],
+        datasets: [{
+          data: [demo.malePopulation, demo.femalePopulation],
+          backgroundColor: ['#15284F', '#15803D'],
+          borderColor: '#FFFFFF',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 14, font: { family: 'Plus Jakarta Sans', size: 12 } } },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.label}: ${context.parsed.toLocaleString('id-ID')} Jiwa (${((context.parsed / demo.totalPopulation) * 100).toFixed(1)}%)`
+            }
+          }
+        }
+      }
+    });
+  },
+
+  // 3. Tingkat Pendidikan Penduduk
+  renderEducationChart() {
+    const ctx = document.getElementById('chartEducation');
+    if (!ctx) return;
+
+    const eduData = SukagalihData.demographics.education;
+    const colors = ['#15284F', '#15803D', '#EAB308', '#0284C7', '#22C55E', '#D97706', '#38BDF8'];
+
+    this.instances.education = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: eduData.map(e => e.level),
+        datasets: [{
+          label: 'Jumlah Warga',
+          data: eduData.map(e => e.count),
+          backgroundColor: colors.slice(0, eduData.length),
+          borderRadius: 8
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.parsed.x.toLocaleString('id-ID')} Orang`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', size: 11 } } },
+          y: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', size: 11 } } }
+        }
+      }
+    });
+  },
+
+  // 4. Distribusi Kelompok Usia Penduduk
+  renderAgeChart() {
+    const ctx = document.getElementById('chartAge');
+    if (!ctx) return;
+
+    const ageData = SukagalihData.demographics.ageGroups;
+    this.instances.age = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ageData.map(a => a.range),
+        datasets: [
+          {
+            label: 'Laki-laki',
+            data: ageData.map(a => a.male),
+            backgroundColor: '#15284F',
+            borderRadius: 6
+          },
+          {
+            label: 'Perempuan',
+            data: ageData.map(a => a.female),
+            backgroundColor: '#15803D',
+            borderRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { boxWidth: 12, font: { family: 'Plus Jakarta Sans', size: 11 } } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', size: 10 }, maxRotation: 45 } },
+          y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Plus Jakarta Sans', size: 11 } } }
+        }
+      }
+    });
+  },
+
+  // 5. Mata Pencaharian Penduduk
+  renderOccupationChart() {
+    const ctx = document.getElementById('chartOccupation');
+    if (!ctx) return;
+
+    const occData = SukagalihData.demographics.occupations.slice(0, 7);
+    this.instances.occupation = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: occData.map(o => o.job),
+        datasets: [{
+          label: 'Jumlah Pekerja',
+          data: occData.map(o => o.count),
+          backgroundColor: '#15803D',
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.parsed.y} Orang`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } } },
+          y: { grid: { color: 'rgba(0,0,0,0.05)' } }
+        }
+      }
+    });
+  },
+
+  // 6. Penggunaan Lahan Desa
+  renderLandUseChart() {
+    const ctx = document.getElementById('chartLandUse');
+    if (!ctx) return;
+
+    const landData = SukagalihData.geography.landUse;
+    this.instances.landUse = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: landData.map(l => l.type),
+        datasets: [{
+          data: landData.map(l => l.areaHa),
+          backgroundColor: ['#15803D', '#15284F', '#0284C7', '#EAB308'],
+          borderColor: '#FFFFFF',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, font: { family: 'Plus Jakarta Sans', size: 11 } } },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.label}: ${context.parsed} Ha (${((context.parsed / 174) * 100).toFixed(1)}%)`
+            }
+          }
+        },
+        cutout: '60%'
+      }
+    });
+  }
+};
+
+if (typeof window !== 'undefined') {
+  window.SukagalihCharts = SukagalihCharts;
+}
+
+  </script>
+  <script>
+/**
+ * Modul Peta Interaktif Desa Sukagalih menggunakan Leaflet.js
+ */
+
+const SukagalihMap = {
+  mapInstance: null,
+
+  init(containerId = 'villageMap') {
+    const mapElement = document.getElementById(containerId);
+    if (!mapElement || typeof L === 'undefined') return;
+
+    // Bersihkan instance lama jika ada
+    if (this.mapInstance) {
+      this.mapInstance.remove();
+      this.mapInstance = null;
+    }
+
+    const { lat, lng, zoom } = SukagalihData.villageInfo.coordinates;
+
+    // Inisialisasi Peta
+    this.mapInstance = L.map(containerId, {
+      center: [lat, lng],
+      zoom: zoom,
+      scrollWheelZoom: false
+    });
+
+    // Layer OpenStreetMap dengan Tile yang bersih
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors | Desa Sukagalih'
+    }).addTo(this.mapInstance);
+
+    // Custom Icon Generator
+    const createGreenIcon = (title, iconEmoji = '📍') => {
+      return L.divIcon({
+        className: 'custom-map-pin',
+        html: `<div style="
+          background: #244A2A;
+          color: #FFF;
+          width: 38px;
+          height: 38px;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #8BCF7A;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        ">
+          <span style="transform: rotate(45deg); font-size: 16px;">${iconEmoji}</span>
+        </div>`,
+        iconSize: [38, 38],
+        iconAnchor: [19, 38],
+        popupAnchor: [0, -38]
+      });
+    };
+
+    // 1. Marker Kantor Desa
+    const officeMarker = L.marker([lat, lng], {
+      icon: createGreenIcon('Kantor Desa Sukagalih', '🏛️')
+    }).addTo(this.mapInstance);
+
+    officeMarker.bindPopup(`
+      <div style="font-family: 'Plus Jakarta Sans', sans-serif; padding: 4px;">
+        <h4 style="margin: 0 0 4px 0; color: #244A2A; font-weight: 800; font-size: 14px;">Kantor Desa Sukagalih</h4>
+        <p style="margin: 0 0 6px 0; font-size: 12px; color: #555;">Pusat Pelayanan & Pemerintahan Desa Sukagalih</p>
+        <span style="display: inline-block; background: #EBF5E9; color: #3F7D3A; font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Telp: ${SukagalihData.villageInfo.hotline}</span>
+      </div>
+    `).openPopup();
+
+    // 2. Titik 4 Dusun
+    const dusunPoints = [
+      { name: "Dusun Cikatubang", lat: -7.2610, lng: 108.1610, icon: "🏡", desc: "Sentra Perikanan & Mata Air Alami" },
+      { name: "Dusun Sindanggalih", lat: -7.2645, lng: 108.1650, icon: "🌾", desc: "Sentra Kerajinan Bambu & Pertanian" },
+      { name: "Dusun Sindangkerta", lat: -7.2600, lng: 108.1680, icon: "☕", desc: "Perkebunan Kopi & Palawija" },
+      { name: "Dusun Parakankawung", lat: -7.2670, lng: 108.1620, icon: "⛰️", desc: "Agrowisata Terasering & Gula Aren" }
+    ];
+
+    dusunPoints.forEach(d => {
+      const marker = L.marker([d.lat, d.lng], {
+        icon: createGreenIcon(d.name, d.icon)
+      }).addTo(this.mapInstance);
+
+      marker.bindPopup(`
+        <div style="font-family: 'Plus Jakarta Sans', sans-serif; padding: 4px;">
+          <h4 style="margin: 0 0 4px 0; color: #244A2A; font-weight: 800; font-size: 13px;">${d.name}</h4>
+          <p style="margin: 0; font-size: 12px; color: #666;">${d.desc}</p>
+        </div>
+      `);
+    });
+
+    // 3. Titik Wisata
+    const tourismPoints = [
+      { name: "Mata Air Cikatubang", lat: -7.2595, lng: 108.1600, icon: "💧", cat: "Wisata Mata Air" },
+      { name: "Terasering Parakankawung", lat: -7.2685, lng: 108.1615, icon: "🏞️", cat: "Agrowisata" }
+    ];
+
+    tourismPoints.forEach(t => {
+      const marker = L.marker([t.lat, t.lng], {
+        icon: createGreenIcon(t.name, t.icon)
+      }).addTo(this.mapInstance);
+
+      marker.bindPopup(`
+        <div style="font-family: 'Plus Jakarta Sans', sans-serif; padding: 4px;">
+          <span style="font-size: 10px; font-weight: 700; color: #3F7D3A; text-transform: uppercase;">${t.cat}</span>
+          <h4 style="margin: 2px 0; color: #244A2A; font-weight: 800; font-size: 13px;">${t.name}</h4>
+        </div>
+      `);
+    });
+  }
+};
+
+if (typeof window !== 'undefined') {
+  window.SukagalihMap = SukagalihMap;
+}
+
+  </script>
+  <script>
+/**
+ * Master Application Controller & Router for Desa Sukagalih Digital Platform
+ */
+
+const SukagalihApp = {
+  currentRoute: '',
+  selectedUmkmCategory: 'Semua',
+  searchUmkmQuery: '',
+  selectedGalleryCategory: 'Semua',
+  selectedNewsCategory: 'Semua',
+
+  init() {
+    this.setupEventListeners();
+    this.handleRouting();
+    window.addEventListener('hashchange', () => this.handleRouting());
+  },
+
+  setupEventListeners() {
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar-wrapper');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Drawer Handlers
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerBackdrop = document.getElementById('drawerBackdrop');
+    const drawerClose = document.getElementById('drawerClose');
+
+    const toggleDrawer = (open) => {
+      if (open) {
+        mobileDrawer?.classList.add('open');
+        drawerBackdrop?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileDrawer?.classList.remove('open');
+        drawerBackdrop?.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    };
+
+    mobileToggle?.addEventListener('click', () => toggleDrawer(true));
+    drawerClose?.addEventListener('click', () => toggleDrawer(false));
+    drawerBackdrop?.addEventListener('click', () => toggleDrawer(false));
+
+    // Close mobile drawer on link click
+    document.querySelectorAll('.mobile-drawer .nav-link').forEach(link => {
+      link.addEventListener('click', () => toggleDrawer(false));
+    });
+
+    // Lightbox Close Handler
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxClose = document.getElementById('lightboxClose');
+    lightboxClose?.addEventListener('click', () => {
+      lightboxModal?.classList.remove('active');
+    });
+    lightboxModal?.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove('active');
+      }
+    });
+  },
+
+  // Router Controller
+  handleRouting() {
+    const rawHash = window.location.hash || '#/';
+    const [path, param] = rawHash.replace('#', '').split('/').filter(Boolean);
+    const route = path || '';
+    this.currentRoute = route;
+
+    // Update active nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const href = link.getAttribute('href')?.replace('#/', '').replace('#', '') || '';
+      if (href === route || (route === '' && href === '')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    const mainContainer = document.getElementById('appContent');
+    if (!mainContainer) return;
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Route Matcher
+    switch (route) {
+      case '':
+        mainContainer.innerHTML = this.renderHomepage();
+        this.initHomepageScripts();
+        break;
+      case 'profil':
+        mainContainer.innerHTML = this.renderProfilePage();
+        break;
+      case 'pemerintahan':
+        mainContainer.innerHTML = this.renderGovernmentPage();
+        break;
+      case 'data-desa':
+        mainContainer.innerHTML = this.renderDataPage();
+        setTimeout(() => SukagalihCharts.initAll(), 100);
+        break;
+      case 'potensi':
+        mainContainer.innerHTML = this.renderPotentialsPage();
+        break;
+      case 'umkm':
+        if (param) {
+          mainContainer.innerHTML = this.renderUmkmDetail(param);
+        } else {
+          mainContainer.innerHTML = this.renderUmkmPage();
+          this.initUmkmEvents();
+        }
+        break;
+      case 'wisata':
+        if (param) {
+          mainContainer.innerHTML = this.renderTourismDetail(param);
+        } else {
+          mainContainer.innerHTML = this.renderTourismPage();
+        }
+        break;
+      case 'berita':
+        if (param) {
+          mainContainer.innerHTML = this.renderNewsDetail(param);
+        } else {
+          mainContainer.innerHTML = this.renderNewsPage();
+        }
+        break;
+      case 'galeri':
+        mainContainer.innerHTML = this.renderGalleryPage();
+        this.initGalleryEvents();
+        break;
+      case 'kkn':
+        mainContainer.innerHTML = this.renderKknPage();
+        break;
+      case 'kontak':
+        mainContainer.innerHTML = this.renderContactPage();
+        setTimeout(() => SukagalihMap.init('contactMap'), 150);
+        break;
+      case 'admin':
+        mainContainer.innerHTML = this.renderAdminPage();
+        break;
+      default:
+        mainContainer.innerHTML = this.renderNotFound();
+    }
+  },
+
+  // =========================================================================
+  // VIEW: HOMEPAGE (/)
+  // =========================================================================
+  renderHomepage() {
+    const data = SukagalihData;
+    const hero = data.villageInfo;
+    const stats = data.demographics;
+    const featuredPotentials = data.potentials.slice(0, 3);
+    const topUmkm = data.umkm.slice(0, 4);
+    const topNews = data.news.slice(0, 2);
+    const events = data.events.slice(0, 3);
+
+    return `
+      <!-- HERO SECTION WITH INDONESIAN BATIK MOTIF -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span>🇮🇩</span> Portal Desa Nusantara • ⛅ 24°C Kaki Galunggung, Tasikmalaya
+            </div>
+            <h1 class="hero-title">
+              Sampurasun! Wilujeng Sumping di<br>
+              <span class="hero-title-highlight">Desa Sukagalih</span>
+            </h1>
+            <p class="hero-subtitle">
+              <em>"Gemah Ripah Loh Jinawi di Bawah Naungan Gunung Galunggung."</em><br>
+              ${hero.shortDesc}
+            </p>
+            <div class="hero-actions">
+              <a href="#/potensi" class="btn btn-primary btn-lg">🌾 Jelajahi Potensi Desa →</a>
+              <a href="#/umkm" class="btn btn-secondary btn-lg">🛍️ Produk Lokal UMKM</a>
+              <a href="#/profil" class="btn btn-outline-white btn-lg">🏛️ Profil & Sejarah</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOATING STATISTIC CARDS -->
+      <div class="hero-stats-wrapper">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">👥</div>
+              <div class="stat-info">
+                <span class="stat-value">${stats.totalPopulation.toLocaleString('id-ID')}</span>
+                <span class="stat-label">Total Penduduk (Jiwa)</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🏡</div>
+              <div class="stat-info">
+                <span class="stat-value">4 Dusun</span>
+                <span class="stat-label">Cikatubang • Sindanggalih • dll</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🌱</div>
+              <div class="stat-info">
+                <span class="stat-value">174 Ha</span>
+                <span class="stat-label">Luas Wilayah Subur</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🛍️</div>
+              <div class="stat-info">
+                <span class="stat-value">50+ UMKM</span>
+                <span class="stat-label">Produk & Usaha Warga</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-image-wrapper">
+              <div class="about-image-main">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80" alt="Lanskap Desa Sukagalih Tasikmalaya">
+              </div>
+              <div class="about-floating-badge">
+                <span class="badge-number">1979</span>
+                <span class="badge-desc">Tahun Kelahiran Resmi<br>Desa Sukagalih</span>
+              </div>
+            </div>
+            <div class="about-text-content">
+              <div class="section-badge">Mengenal Sukagalih</div>
+              <h2 class="section-title">Harmoni Alam & Masyarakat Produktif di Kaki Galunggung</h2>
+              <p class="section-subtitle" style="margin-bottom: 1.25rem;">${hero.longDesc}</p>
+              
+              <div class="about-meta-list">
+                <div class="about-meta-item">
+                  <span class="meta-icon">📍</span>
+                  <div>
+                    <div class="meta-label">Kecamatan</div>
+                    <div class="meta-value">Sukaratu</div>
+                  </div>
+                </div>
+                <div class="about-meta-item">
+                  <span class="meta-icon">🏛️</span>
+                  <div>
+                    <div class="meta-label">Kabupaten</div>
+                    <div class="meta-value">Tasikmalaya</div>
+                  </div>
+                </div>
+                <div class="about-meta-item">
+                  <span class="meta-icon">⛰️</span>
+                  <div>
+                    <div class="meta-label">Ketinggian</div>
+                    <div class="meta-value">400 - 450 mdpl</div>
+                  </div>
+                </div>
+                <div class="about-meta-item">
+                  <span class="meta-icon">🛣️</span>
+                  <div>
+                    <div class="meta-label">Akses Jalan</div>
+                    <div class="meta-value">Jalan Aspal Hotmix</div>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#/profil" class="btn btn-primary">Baca Profil Lengkap Desa →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISI & MISI SECTION -->
+      <section class="section section-bg-light">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge">Arah Pembangunan</div>
+            <h2 class="section-title">Menuju Sukagalih yang Lebih Berkembang</h2>
+            <p class="section-subtitle">Komitmen terpadu mewujudkan desa yang mandiri, agraris, religius, dan sejahtera.</p>
+          </div>
+
+          <div class="visi-box">
+            <span class="visi-tag">Visi Pemerintah Desa Sukagalih</span>
+            <div class="visi-quote">"${data.visionMission.vision}"</div>
+            <p class="visi-desc">${data.visionMission.visionNote}</p>
+          </div>
+
+          <div class="misi-grid">
+            ${data.visionMission.missions.slice(0, 4).map(m => `
+              <div class="misi-card">
+                <div class="misi-num">${m.no}</div>
+                <h4 class="misi-title">${m.title}</h4>
+                <p class="misi-desc">${m.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- POTENSI DESA SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge">Potensi Sukagalih</div>
+            <h2 class="section-title">Kekayaan Alam & Karya Masyarakat Lokal</h2>
+            <p class="section-subtitle">Dari tanah yang subur, perikanan air jernih, hingga kreativitas kerajinan bambu.</p>
+          </div>
+
+          <div class="potensi-grid">
+            ${data.potentials.map(p => `
+              <div class="potensi-card">
+                <div class="potensi-image">
+                  <img src="${p.image}" alt="${p.title}" loading="lazy">
+                  <div class="potensi-icon-badge">${p.icon}</div>
+                </div>
+                <div class="potensi-body">
+                  <h3 class="potensi-title">${p.title}</h3>
+                  <div class="potensi-tagline">${p.tagline}</div>
+                  <p class="potensi-desc">${p.desc}</p>
+                  <div class="potensi-footer">
+                    <span>${p.metrics}</span>
+                    <a href="#/potensi" style="color: var(--primary-main); font-weight: 700;">Detail →</a>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED STORY (DARK GREEN SPOTLIGHT) -->
+      <section class="section section-bg-dark">
+        <div class="container">
+          <div class="story-wrapper">
+            <div class="story-content">
+              <div class="section-badge badge-white">Cerita dari Tanah Sukagalih</div>
+              <h2 class="story-title">${data.featuredStory.title}</h2>
+              <div class="story-subtitle">${data.featuredStory.subtitle}</div>
+              <p class="story-body">${data.featuredStory.content}</p>
+
+              <div class="story-stats">
+                ${data.featuredStory.highlightStats.map(s => `
+                  <div class="story-stat-item">
+                    <div class="story-stat-val">${s.value}</div>
+                    <div class="story-stat-lbl">${s.label}</div>
+                  </div>
+                `).join('')}
+              </div>
+
+              <div>
+                <a href="#/profil" class="btn btn-secondary">Pelajari Sejarah & Potensi →</a>
+              </div>
+            </div>
+            <div class="story-image-card">
+              <img src="${data.featuredStory.image}" alt="Cerita Sukagalih">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUK UMKM LOKAL SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge">Marketplace Desa</div>
+            <h2 class="section-title">Produk Unggulan & UMKM Sukagalih</h2>
+            <p class="section-subtitle">Dukung ekonomi kemasyarakatan dengan membeli langsung dari petani, peternak, dan pengrajin lokal.</p>
+          </div>
+
+          <div class="umkm-grid">
+            ${topUmkm.map(u => this.renderUmkmCardHtml(u)).join('')}
+          </div>
+
+          <div style="text-align: center; margin-top: 3rem;">
+            <a href="#/umkm" class="btn btn-outline btn-lg">Lihat Semua Produk UMKM Sukagalih (${data.umkm.length}) →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- BERITA & AGENDA SECTION -->
+      <section class="section section-bg-light">
+        <div class="container">
+          <div class="news-agenda-grid">
+            <div>
+              <div class="section-badge">Kabar Sukagalih</div>
+              <h2 class="section-title" style="margin-bottom: 1.5rem;">Berita & Kegiatan Terkini</h2>
+              
+              <div class="news-cards-grid">
+                ${topNews.map(n => `
+                  <div class="news-card">
+                    <div class="news-image">
+                      <img src="${n.image}" alt="${n.title}" loading="lazy">
+                      <div class="news-category-badge">${n.category}</div>
+                    </div>
+                    <div class="news-body">
+                      <div class="news-date">📅 ${n.date}</div>
+                      <h4 class="news-title">${n.title}</h4>
+                      <p class="news-excerpt">${n.excerpt}</p>
+                      <a href="#/berita/${n.id}" style="color: var(--primary-main); font-weight: 700; font-size: 0.85rem; margin-top: auto;">Baca Selengkapnya →</a>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              <div style="margin-top: 1.5rem;">
+                <a href="#/berita" class="btn btn-outline btn-sm">Lihat Semua Berita →</a>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-badge">Agenda Desa</div>
+              <h2 class="section-title" style="margin-bottom: 1.5rem;">Jadwal Kegiatan</h2>
+
+              <div class="agenda-list">
+                ${events.map(e => `
+                  <div class="agenda-card">
+                    <div class="agenda-date-box">
+                      <div class="date-day">${e.dateDay}</div>
+                      <div class="date-month">${e.dateMonth}</div>
+                    </div>
+                    <div class="agenda-info">
+                      <h4 class="agenda-title">${e.title}</h4>
+                      <div class="agenda-loc">📍 ${e.location}</div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KKN 2026 SPOTLIGHT SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="kkn-hero-card">
+            <div class="kkn-hero-grid">
+              <div>
+                <div class="kkn-badge">Inisiatif KKN Mahasiswa 2026</div>
+                <h2 class="kkn-univ-title">Jejak Kolaborasi KKN Kelompok 09 Universitas BTH</h2>
+                <p class="kkn-univ-sub">${data.kknInfo.description}</p>
+                
+                <div class="kkn-details-list">
+                  <div class="kkn-detail-tag">🏛️ ${data.kknInfo.university}</div>
+                  <div class="kkn-detail-tag">👥 ${data.kknInfo.groupName}</div>
+                  <div class="kkn-detail-tag">📅 Periode 2026</div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                  <a href="#/kkn" class="btn btn-secondary">Lihat Program Kerja & Tim KKN →</a>
+                </div>
+              </div>
+              <div class="kkn-logo-emblem-card">
+                <img src="assets/images/logo-kkn.svg" alt="Emblem KKN 09 Universitas BTH" class="kkn-emblem-img">
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: #FFF; margin-bottom: 0.25rem;">KELOMPOK 09 DESA SUKAGALIH</h4>
+                <p style="font-size: 0.8rem; color: #B9D4B6;">KKN 2026 UNIVERSITAS BTH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP SECTION -->
+      <section class="section section-bg-light" style="padding-bottom: 0;">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge">Peta Wilayah</div>
+            <h2 class="section-title">Temukan Desa Sukagalih</h2>
+            <p class="section-subtitle">Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat</p>
+          </div>
+          <div id="homeMap" class="map-container"></div>
+        </div>
+      </section>
+    `;
+  },
+
+  initHomepageScripts() {
+    setTimeout(() => {
+      SukagalihMap.init('homeMap');
+    }, 150);
+  },
+
+  // Helper UMKM Card HTML
+  renderUmkmCardHtml(u) {
+    const waText = encodeURIComponent(`Halo, saya tertarik memesan produk *${u.name}* dari UMKM Desa Sukagalih seharga ${u.price}. Mohon info ketersediaan stoknya. Terima kasih!`);
+    const waUrl = `https://wa.me/${u.whatsapp}?text=${waText}`;
+
+    return `
+      <div class="product-card">
+        <div class="product-image">
+          <img src="${u.image}" alt="${u.name}" loading="lazy">
+          <div class="product-badge">${u.badge}</div>
+          <div class="product-category-tag">${u.category}</div>
+        </div>
+        <div class="product-body">
+          <div class="product-seller">🏪 ${u.umkmName}</div>
+          <h4 class="product-name">${u.name}</h4>
+          <p class="product-desc">${u.desc}</p>
+          
+          <div class="product-price-row">
+            <div>
+              <div class="product-price">${u.price}</div>
+              <div class="product-location">📍 ${u.location}</div>
+            </div>
+          </div>
+
+          <div class="product-actions">
+            <a href="${waUrl}" target="_blank" class="btn btn-primary btn-sm" title="Pesan langsung via WhatsApp">
+              💬 Pesan via WA
+            </a>
+            <a href="#/umkm/${u.id}" class="btn btn-outline btn-sm" title="Detail Produk">
+              Detail
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: PROFIL DESA (/profil)
+  // =========================================================================
+  renderProfilePage() {
+    const data = SukagalihData;
+    const h = data.history;
+    const g = data.geography;
+
+    return `
+      <div class="container section">
+        <div class="section-header text-left">
+          <div class="section-badge">Profil Lengkap</div>
+          <h1 class="section-title">Profil Resmi Desa Sukagalih</h1>
+          <p class="section-subtitle">Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat</p>
+        </div>
+
+        <!-- Sejarah & Dasar Hukum -->
+        <div class="card" style="padding: 2.5rem; margin-bottom: 3rem;">
+          <h2 style="font-size: 1.5rem; color: var(--secondary-deep); margin-bottom: 1rem;">1. Sejarah & Pembentukan Desa</h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">${h.narrative}</p>
+          
+          <div style="background: var(--bg-light-moss); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+            <strong style="color: var(--secondary-deep); font-size: 0.95rem; display: block; margin-bottom: 0.5rem;">Dasar Hukum Pemekaran Resmi:</strong>
+            <ul style="list-style-position: inside; color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+              ${h.legalBasis.map(l => `<li>${l}</li>`).join('')}
+            </ul>
+          </div>
+
+          <h3 style="font-size: 1.2rem; color: var(--secondary-deep); margin-bottom: 1.25rem;">Kepemimpinan Kepala Desa dari Masa ke Masa</h3>
+          <div style="border-left: 3px solid var(--primary-main); padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+            ${h.timeline.map(t => `
+              <div>
+                <span style="display: inline-block; background: var(--primary-main); color: #FFF; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-bottom: 0.25rem;">${t.year}</span>
+                <h4 style="font-size: 1.05rem; color: var(--secondary-deep);">${t.title}</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">${t.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Keadaan Geografis & Batas Wilayah -->
+        <div class="card" style="padding: 2.5rem; margin-bottom: 3rem;">
+          <h2 style="font-size: 1.5rem; color: var(--secondary-deep); margin-bottom: 1rem;">2. Keadaan Geografis & Batas Wilayah</h2>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+            Desa Sukagalih terletak pada ketinggian <strong>${g.elevation}</strong> di atas permukaan laut dengan topografi tanah darat, persawahan subur, dan kolam air tawar. Jarak ke ibu kota Kecamatan Sukaratu sejauh <strong>${g.distanceToDistrict}</strong> dan ke ibu kota Kabupaten Tasikmalaya sejauh <strong>${g.distanceToRegency}</strong> melalui akses jalan hotmix yang mulus.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <div style="background: var(--bg-offwhite); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <h4 style="color: var(--secondary-deep); margin-bottom: 0.75rem;">Batas Wilayah Administratif</h4>
+              <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Utara:</strong> ${g.borders.north}</li>
+                <li><strong>Selatan:</strong> ${g.borders.south}</li>
+                <li><strong>Timur:</strong> ${g.borders.east}</li>
+                <li><strong>Barat:</strong> ${g.borders.west}</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-offwhite); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <h4 style="color: var(--secondary-deep); margin-bottom: 0.75rem;">Penggunaan Lahan Total (174 Ha)</h4>
+              <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                ${g.landUse.map(l => `<li>• <strong>${l.type}:</strong> ${l.areaHa} Ha (${l.percentage}%)</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Kepunduhan / Dusun -->
+        <div class="card" style="padding: 2.5rem;">
+          <h2 style="font-size: 1.5rem; color: var(--secondary-deep); margin-bottom: 1.5rem;">3. Wilayah 4 Kepunduhan (Dusun)</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+            ${g.dusun.map(d => `
+              <div style="background: var(--bg-offwhite); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="color: var(--secondary-deep); font-size: 1.15rem; margin-bottom: 0.35rem;">${d.name}</h3>
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary-main); margin-bottom: 0.75rem;">Kadus: ${d.kadus}</div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">${d.desc}</p>
+                <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px dashed var(--border-subtle); padding-top: 0.5rem;">
+                  Luas: <strong>${d.areaHa} Ha</strong> | Penduduk: <strong>${d.population} Jiwa</strong>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: PEMERINTAHAN DESA (/pemerintahan)
+  // =========================================================================
+  renderGovernmentPage() {
+    const data = SukagalihData;
+    const gov = data.government;
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Struktur Organisasi & Tata Kerja (SOTK)</div>
+          <h1 class="section-title">Pemerintahan Desa Sukagalih</h1>
+          <p class="section-subtitle">Aparatur Pemerintah Desa, Badan Permusyawaratan Desa (BPD), dan Lembaga Kemasyarakatan</p>
+        </div>
+
+        <!-- Pimpinan Desa -->
+        <div class="gov-hero-leader">
+          <div class="gov-leader-photo">👔</div>
+          <div class="gov-leader-info">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-main); text-transform: uppercase;">Kepala Desa Sukagalih</span>
+            <h3>${gov.headOfVillage.name}</h3>
+            <div class="gov-leader-role">${gov.headOfVillage.period}</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              <div>Pendidikan: ${gov.headOfVillage.education}</div>
+              <div>Lahir: ${gov.headOfVillage.birthDate}</div>
+              <div style="font-size: 0.82rem; color: var(--primary-main); font-weight: 600; margin-top: 0.35rem;">🏛️ Pelayanan Informasi via Balai Desa Sukagalih</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Perangkat Desa Lengkap -->
+        <h2 style="font-size: 1.5rem; color: var(--secondary-deep); margin-bottom: 1.5rem; text-align: center;">Perangkat & Staf Pemerintah Desa</h2>
+        <div class="gov-grid" style="margin-bottom: 4rem;">
+          <div class="gov-card">
+            <div class="gov-card-name">${gov.secretary.name}</div>
+            <div class="gov-card-role">${gov.secretary.title}</div>
+            <div class="gov-card-meta">
+              <div>Pendidikan: ${gov.secretary.edu || 'SLTA'}</div>
+              <div>Lahir: ${gov.secretary.birthDate}</div>
+            </div>
+          </div>
+          ${gov.staff.map(s => `
+            <div class="gov-card">
+              <div class="gov-card-name">${s.name}</div>
+              <div class="gov-card-role">${s.role}</div>
+              <div class="gov-card-meta">
+                <div>Pendidikan: ${s.edu}</div>
+                <div>Lahir: ${s.dob}</div>
+                ${s.nipd ? `<div>NIPD: ${s.nipd}</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Badan Permusyawaratan Desa (BPD) -->
+        <div class="card" style="padding: 2.5rem; margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.5rem; color: var(--secondary-deep); margin-bottom: 1.5rem; text-align: center;">Badan Permusyawaratan Desa (BPD) Sukagalih</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+            ${gov.bpd.map(b => `
+              <div style="background: var(--bg-offwhite); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <div style="font-weight: 800; color: var(--secondary-deep); font-size: 1rem;">${b.name}</div>
+                <div style="color: var(--primary-main); font-weight: 700; font-size: 0.82rem; margin: 0.2rem 0 0.5rem 0;">${b.role}</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Pendidikan: ${b.edu} | Lahir: ${b.dob}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Kelompok Tani / Gapoktan -->
+        <div class="card" style="padding: 2.5rem;">
+          <h2 style="font-size: 1.5rem; color: var(--secondary-deep); margin-bottom: 1.5rem; text-align: center;">Lembaga Pertanian & GAPOKTAN Galih Mukti</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+            ${gov.agricultureGroups.map(a => `
+              <div style="background: var(--bg-offwhite); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <div style="font-weight: 800; color: var(--secondary-deep); font-size: 1rem;">${a.name}</div>
+                <div style="font-size: 0.8rem; color: var(--primary-mid); font-weight: 600; margin-bottom: 0.5rem;">📍 ${a.lokasi}</div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+                  <div>Ketua: <strong>${a.ketua}</strong></div>
+                  <div>Sekretaris: ${a.sekretaris}</div>
+                  <div>Bendahara: ${a.bendahara}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: DATA DESA & VISUALISASI (/data-desa)
+  // =========================================================================
+  renderDataPage() {
+    const data = SukagalihData;
+    const demo = data.demographics;
+    const dusun = data.geography.dusun;
+
+    return `
+      <div class="container section">
+        <div class="section-header text-left">
+          <div class="section-badge">Data & Statistik Resmi</div>
+          <h1 class="section-title">Visualisasi Data Desa Sukagalih</h1>
+          <p class="section-subtitle">Data demografi kependudukan, kelompok usia, pendidikan, dan mata pencaharian terpusat.</p>
+        </div>
+
+        <!-- Metric Summary Cards -->
+        <div class="stats-grid" style="margin-bottom: 2.5rem;">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-info">
+              <span class="stat-value">${demo.totalPopulation.toLocaleString('id-ID')}</span>
+              <span class="stat-label">Total Jiwa Penduduk</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👨‍👩‍👧‍👦</div>
+            <div class="stat-info">
+              <span class="stat-value">${demo.totalKK.toLocaleString('id-ID')}</span>
+              <span class="stat-label">Total Kepala Keluarga (KK)</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏠</div>
+            <div class="stat-info">
+              <span class="stat-value">${demo.totalKRT.toLocaleString('id-ID')}</span>
+              <span class="stat-label">Kepala Rumah Tangga (KRT)</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📍</div>
+            <div class="stat-info">
+              <span class="stat-value">${demo.totalDusun} Dusun / ${demo.totalRT} RT</span>
+              <span class="stat-label">8 Rukun Warga (RW)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHARTS SECTION -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Distribusi Penduduk per Dusun</h3>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartDusun"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Perbandingan Jenis Kelamin</h3>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartGender"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Tingkat Pendidikan Penduduk</h3>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartEducation"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Kelompok Usia Penduduk</h3>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartAge"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Mata Pencaharian Utama Warga</h3>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartOccupation"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Tata Guna Lahan Desa (174 Ha)</h3>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartLandUse"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABEL DATA PER DUSUN RESMI -->
+        <div class="dusun-table-wrapper">
+          <h3 style="font-size: 1.25rem; color: var(--secondary-deep); margin-bottom: 1.25rem;">Tabel Rincian Kependudukan per Kepunduhan (Dusun)</h3>
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Kepunduhan / Dusun</th>
+                <th>Luas (Ha)</th>
+                <th>Laki-laki</th>
+                <th>Perempuan</th>
+                <th>Total Jiwa</th>
+                <th>Jumlah KK</th>
+                <th>Jumlah KRT</th>
+                <th>Kepala Dusun</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${dusun.map((d, idx) => `
+                <tr>
+                  <td>${idx + 1}</td>
+                  <td><strong>${d.name}</strong></td>
+                  <td>${d.areaHa} Ha</td>
+                  <td>${d.male}</td>
+                  <td>${d.female}</td>
+                  <td><strong>${d.population}</strong></td>
+                  <td>${d.kk}</td>
+                  <td>${d.krt}</td>
+                  <td>${d.kadus}</td>
+                </tr>
+              `).join('')}
+              <tr style="background: var(--bg-light-moss); font-weight: 800;">
+                <td colspan="2">JUMLAH TOTAL</td>
+                <td>174 Ha</td>
+                <td>2.684</td>
+                <td>2.553</td>
+                <td>5.237 Jiwa</td>
+                <td>1.865 KK</td>
+                <td>1.106 KRT</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: POTENSI DESA (/potensi)
+  // =========================================================================
+  renderPotentialsPage() {
+    const data = SukagalihData;
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Potensi & Komoditas</div>
+          <h1 class="section-title">Katalog Potensi Desa Sukagalih</h1>
+          <p class="section-subtitle">Mengenal keunggulan sektor agraris, perikanan air tawar, pariwisata alam, dan industri kreatif warga.</p>
+        </div>
+
+        <div class="potensi-grid" style="margin-bottom: 3.5rem;">
+          ${data.potentials.map(p => `
+            <div class="potensi-card">
+              <div class="potensi-image">
+                <img src="${p.image}" alt="${p.title}" loading="lazy">
+                <div class="potensi-icon-badge">${p.icon}</div>
+              </div>
+              <div class="potensi-body">
+                <h3 class="potensi-title">${p.title}</h3>
+                <div class="potensi-tagline">${p.tagline}</div>
+                <p class="potensi-desc">${p.desc}</p>
+                <div class="potensi-footer">
+                  <span>${p.metrics}</span>
+                  <a href="#/umkm" style="color: var(--primary-main); font-weight: 700;">Produk Terkait →</a>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Spotlight Keunggulan Lahan Subur -->
+        <div class="card" style="padding: 2.5rem; background: var(--bg-light-moss); border-color: rgba(95,175,82,0.3);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+            <div>
+              <div class="section-badge badge-white" style="background: var(--primary-main); color: #FFF;">Keunggulan Geografis</div>
+              <h2 style="font-size: 1.75rem; color: var(--secondary-deep); margin-bottom: 0.75rem;">Sentra Pertanian & Sumber Air Kaki Galunggung</h2>
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                Kondisi tanah vulkanik yang kaya hara dan limpahan debit air pegunungan yang tidak pernah surut menjadikan Sukagalih sebagai lokasi ideal bagi pertanian organik dan budidaya ikan kolam air deras.
+              </p>
+              <a href="#/kontak" class="btn btn-primary">Konsultasi / Kerja Sama Potensi Desa →</a>
+            </div>
+            <div style="border-radius: var(--radius-lg); overflow: hidden; height: 260px;">
+              <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Sawah Sukagalih" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: UMKM MARKETPLACE (/umkm)
+  // =========================================================================
+  renderUmkmPage() {
+    const categories = ['Semua', 'Makanan', 'Minuman', 'Pertanian', 'Kerajinan'];
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Direktori UMKM & Belanja Desa</div>
+          <h1 class="section-title">Produk Lokal Desa Sukagalih</h1>
+          <p class="section-subtitle">Dukung usaha mikro dan kelompok wanita tani (KWT) dengan memesan produk asli langsung dari warga.</p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="filter-bar">
+          <div class="category-pills" id="umkmCategoryPills">
+            ${categories.map(cat => `
+              <button class="category-pill ${this.selectedUmkmCategory === cat ? 'active' : ''}" data-category="${cat}">
+                ${cat}
+              </button>
+            `).join('')}
+          </div>
+
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="umkmSearchInput" class="search-input" placeholder="Cari produk Sukagalih..." value="${this.searchUmkmQuery}">
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="umkm-grid" id="umkmProductsContainer">
+          ${this.getFilteredUmkm().map(u => this.renderUmkmCardHtml(u)).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  getFilteredUmkm() {
+    return SukagalihData.umkm.filter(item => {
+      const matchCategory = this.selectedUmkmCategory === 'Semua' || item.category === this.selectedUmkmCategory;
+      const query = this.searchUmkmQuery.toLowerCase();
+      const matchSearch = item.name.toLowerCase().includes(query) ||
+                          item.desc.toLowerCase().includes(query) ||
+                          item.umkmName.toLowerCase().includes(query);
+      return matchCategory && matchSearch;
+    });
+  },
+
+  initUmkmEvents() {
+    const categoryPills = document.querySelectorAll('#umkmCategoryPills .category-pill');
+    categoryPills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        this.selectedUmkmCategory = e.currentTarget.getAttribute('data-category');
+        categoryPills.forEach(p => p.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        this.refreshUmkmGrid();
+      });
+    });
+
+    const searchInput = document.getElementById('umkmSearchInput');
+    searchInput?.addEventListener('input', (e) => {
+      this.searchUmkmQuery = e.target.value;
+      this.refreshUmkmGrid();
+    });
+  },
+
+  refreshUmkmGrid() {
+    const container = document.getElementById('umkmProductsContainer');
+    if (!container) return;
+    const filtered = this.getFilteredUmkm();
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌾</div>
+          <h3 style="color: var(--secondary-deep);">Produk Tidak Ditemukan</h3>
+          <p>Coba gunakan kata kunci pencarian lain atau pilih kategori Semua.</p>
+        </div>
+      `;
+    } else {
+      container.innerHTML = filtered.map(u => this.renderUmkmCardHtml(u)).join('');
+    }
+  },
+
+  // UMKM Detail View
+  renderUmkmDetail(id) {
+    const product = SukagalihData.umkm.find(u => u.id === id);
+    if (!product) return this.renderNotFound();
+
+    const waText = encodeURIComponent(`Halo, saya tertarik memesan produk *${product.name}* dari UMKM Desa Sukagalih seharga ${product.price}. Mohon info ketersediaan dan pemesanan. Terima kasih!`);
+    const waUrl = `https://wa.me/${product.whatsapp}?text=${waText}`;
+
+    return `
+      <div class="container section">
+        <a href="#/umkm" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary-main); font-weight: 700; margin-bottom: 1.5rem;">
+          ← Kembali ke Katalog UMKM
+        </a>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem;">
+            <div style="border-radius: var(--radius-lg); overflow: hidden; height: 380px;">
+              <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <span class="product-badge" style="position: static;">${product.badge}</span>
+                <span class="product-category-tag" style="position: static;">${product.category}</span>
+              </div>
+
+              <h1 style="font-size: 2rem; color: var(--secondary-deep); margin-bottom: 0.5rem;">${product.name}</h1>
+              <div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-main); margin-bottom: 1.25rem;">
+                Diproduksi oleh: <strong>${product.umkmName}</strong> (📍 ${product.location})
+              </div>
+
+              <div style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: var(--primary-main); margin-bottom: 1.5rem;">
+                ${product.price}
+              </div>
+
+              <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                ${product.desc}
+              </p>
+
+              <div style="margin-top: auto; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="${waUrl}" target="_blank" class="btn btn-primary btn-lg">
+                  💬 Hubungi Penjual via WhatsApp
+                </a>
+                <a href="#/kontak" class="btn btn-outline btn-lg">
+                  Bantuan Layanan Desa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: WISATA DESA (/wisata)
+  // =========================================================================
+  renderTourismPage() {
+    const data = SukagalihData;
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Eksplorasi Alam</div>
+          <h1 class="section-title">Jelajahi Wisata Sukagalih</h1>
+          <p class="section-subtitle">Rasakan kesegaran mata air alami, sawah terasering, dan panorama perbukitan di bawah langit Galunggung.</p>
+        </div>
+
+        <div class="tourism-grid">
+          ${data.tourism.map(t => `
+            <div class="tourism-card">
+              <div class="tourism-image">
+                <img src="${t.image}" alt="${t.name}" loading="lazy">
+              </div>
+              <div class="tourism-content">
+                <div class="tourism-cat">${t.category}</div>
+                <h3 class="tourism-name">${t.name}</h3>
+                <p class="tourism-desc">${t.desc}</p>
+                
+                <div class="tourism-facilities">
+                  ${t.facilities.map(f => `<span class="facility-tag">${f}</span>`).join('')}
+                </div>
+
+                <div class="tourism-meta">
+                  <span>⏱️ ${t.hours}</span>
+                  <span style="color: var(--primary-main); font-weight: 700;">${t.ticket}</span>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <a href="#/wisata/${t.id}" class="btn btn-outline btn-sm">Lihat Detail Destinasi →</a>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  renderTourismDetail(id) {
+    const tour = SukagalihData.tourism.find(t => t.id === id);
+    if (!tour) return this.renderNotFound();
+
+    return `
+      <div class="container section">
+        <a href="#/wisata" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary-main); font-weight: 700; margin-bottom: 1.5rem;">
+          ← Kembali ke Destinasi Wisata
+        </a>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+            <div style="border-radius: var(--radius-lg); overflow: hidden; height: 360px;">
+              <img src="${tour.image}" alt="${tour.name}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <div>
+              <div class="section-badge">${tour.category}</div>
+              <h1 style="font-size: 2rem; color: var(--secondary-deep); margin-bottom: 0.5rem;">${tour.name}</h1>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">📍 ${tour.location}</div>
+              
+              <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+                ${tour.desc}
+              </p>
+
+              <div style="background: var(--bg-offwhite); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <h4 style="color: var(--secondary-deep); margin-bottom: 0.5rem; font-size: 0.95rem;">Fasilitas Pengunjung:</h4>
+                <div class="tourism-facilities">
+                  ${tour.facilities.map(f => `<span class="facility-tag">${f}</span>`).join('')}
+                </div>
+              </div>
+
+              <a href="https://maps.google.com/?q=${encodeURIComponent(tour.mapsQuery)}" target="_blank" class="btn btn-primary">
+                🗺️ Buka Rute di Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: BERITA & ARTIKEL (/berita)
+  // =========================================================================
+  renderNewsPage() {
+    const data = SukagalihData;
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Kabar & Informasi Publik</div>
+          <h1 class="section-title">Berita Desa Sukagalih</h1>
+          <p class="section-subtitle">Dapatkan informasi terkini mengenai kegiatan masyarakat, pembangunan desa, dan kolaborasi KKN BTH.</p>
+        </div>
+
+        <div class="news-cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+          ${data.news.map(n => `
+            <div class="news-card">
+              <div class="news-image">
+                <img src="${n.image}" alt="${n.title}" loading="lazy">
+                <div class="news-category-badge">${n.category}</div>
+              </div>
+              <div class="news-body">
+                <div class="news-date">📅 ${n.date} • ✍️ ${n.author}</div>
+                <h4 class="news-title">${n.title}</h4>
+                <p class="news-excerpt">${n.excerpt}</p>
+                <a href="#/berita/${n.id}" style="color: var(--primary-main); font-weight: 700; font-size: 0.85rem; margin-top: auto;">
+                  Baca Selengkapnya →
+                </a>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  renderNewsDetail(id) {
+    const n = SukagalihData.news.find(item => item.id === id);
+    if (!n) return this.renderNotFound();
+
+    return `
+      <div class="container section">
+        <a href="#/berita" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary-main); font-weight: 700; margin-bottom: 1.5rem;">
+          ← Kembali ke Berita
+        </a>
+
+        <article class="card" style="padding: 2.5rem; max-width: 860px; margin: 0 auto;">
+          <div class="section-badge">${n.category}</div>
+          <h1 style="font-size: 2.25rem; color: var(--secondary-deep); margin: 0.5rem 0 1rem 0; line-height: 1.25;">${n.title}</h1>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.75rem;">
+            Dipublikasikan pada: <strong>${n.date}</strong> | Redaksi: <strong>${n.author}</strong>
+          </div>
+
+          <div style="border-radius: var(--radius-lg); overflow: hidden; height: 380px; margin-bottom: 2rem;">
+            <img src="${n.image}" alt="${n.title}" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line;">
+            ${n.content}
+          </div>
+        </article>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: GALERI DESA (/galeri)
+  // =========================================================================
+  renderGalleryPage() {
+    const categories = ['Semua', 'Kegiatan Desa', 'Masyarakat', 'UMKM', 'Lingkungan', 'Wisata', 'KKN'];
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Dokumentasi Visual</div>
+          <h1 class="section-title">Momen dari Sukagalih</h1>
+          <p class="section-subtitle">Potret kehangatan masyarakat, bentang alam hijau, dan dinamika kegiatan di Desa Sukagalih.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" style="justify-content: center;">
+          <div class="category-pills" id="galleryCategoryPills">
+            ${categories.map(cat => `
+              <button class="category-pill ${this.selectedGalleryCategory === cat ? 'active' : ''}" data-category="${cat}">
+                ${cat}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Masonry Gallery -->
+        <div class="gallery-grid" id="galleryContainer">
+          ${this.getFilteredGallery().map(g => `
+            <div class="gallery-item" data-image="${g.image}" data-title="${g.title}" data-desc="${g.dusun} (${g.category})">
+              <img src="${g.image}" alt="${g.title}" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-tag">${g.category} • ${g.dusun}</div>
+                <div class="gallery-title">${g.title}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  getFilteredGallery() {
+    if (this.selectedGalleryCategory === 'Semua') {
+      return SukagalihData.gallery;
+    }
+    return SukagalihData.gallery.filter(g => g.category === this.selectedGalleryCategory);
+  },
+
+  initGalleryEvents() {
+    const pills = document.querySelectorAll('#galleryCategoryPills .category-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        this.selectedGalleryCategory = e.currentTarget.getAttribute('data-category');
+        pills.forEach(p => p.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        this.refreshGalleryGrid();
+      });
+    });
+
+    this.attachLightboxHandlers();
+  },
+
+  refreshGalleryGrid() {
+    const container = document.getElementById('galleryContainer');
+    if (!container) return;
+    container.innerHTML = this.getFilteredGallery().map(g => `
+      <div class="gallery-item" data-image="${g.image}" data-title="${g.title}" data-desc="${g.dusun} (${g.category})">
+        <img src="${g.image}" alt="${g.title}" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-tag">${g.category} • ${g.dusun}</div>
+          <div class="gallery-title">${g.title}</div>
+        </div>
+      </div>
+    `).join('');
+    this.attachLightboxHandlers();
+  },
+
+  attachLightboxHandlers() {
+    const items = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    const modalCaption = document.getElementById('lightboxCaption');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.getAttribute('data-image');
+        const title = item.getAttribute('data-title');
+        const desc = item.getAttribute('data-desc');
+
+        if (modalImg) modalImg.src = imgSrc;
+        if (modalCaption) modalCaption.innerHTML = `<strong>${title}</strong><br><span style="font-size:0.85rem; color:#B9D4B6;">${desc}</span>`;
+        modal?.classList.add('active');
+      });
+    });
+  },
+
+  // =========================================================================
+  // VIEW: KKN JEJAK & 19 TIM MAHASISWA (/kkn)
+  // =========================================================================
+  renderKknPage() {
+    const data = SukagalihData;
+    const kkn = data.kknInfo;
+
+    return `
+      <div class="container section">
+        <!-- Hero KKN Card -->
+        <div class="kkn-hero-card">
+          <div class="kkn-hero-grid">
+            <div>
+              <div class="kkn-badge">Portal KKN Mahasiswa 2026</div>
+              <h1 class="kkn-univ-title">Jejak KKN di Sukagalih</h1>
+              <p class="kkn-univ-sub">${kkn.description}</p>
+              
+              <div class="kkn-details-list">
+                <div class="kkn-detail-tag">🏛️ ${kkn.university}</div>
+                <div class="kkn-detail-tag">👥 ${kkn.groupName} (${kkn.totalMembers} Mahasiswa)</div>
+                <div class="kkn-detail-tag">📍 ${kkn.location}</div>
+                <div class="kkn-detail-tag">🎓 ${kkn.supervisor}</div>
+              </div>
+            </div>
+            <div class="kkn-logo-emblem-card">
+              <img src="assets/images/logo-kkn.svg" alt="Emblem KKN 09 Universitas BTH" class="kkn-emblem-img">
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #FFF; margin-bottom: 0.25rem;">KELOMPOK 09 DESA SUKAGALIH</h3>
+              <p style="font-size: 0.82rem; color: #B9D4B6;">KKN 2026 UNIVERSITAS BTH</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Program Kerja KKN -->
+        <div class="section-header">
+          <div class="section-badge">Program Kerja Terpadu</div>
+          <h2 class="section-title">Inisiatif Pemberdayaan Berkelanjutan</h2>
+          <p class="section-subtitle">Fokus program pengabdian masyarakat untuk kemandirian digital dan kesehatan desa.</p>
+        </div>
+
+        <div class="kkn-programs-grid">
+          ${kkn.programs.map(p => `
+            <div class="program-card">
+              <div class="program-icon">${p.icon}</div>
+              <h3 class="program-title">${p.title}</h3>
+              <p class="program-desc">${p.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- 19 Anggota Tim Mahasiswa KKN Kelompok 09 -->
+        <div class="section-header">
+          <div class="section-badge">Struktur Tim (${kkn.totalMembers} Mahasiswa)</div>
+          <h2 class="section-title">Anggota Tim KKN Kelompok 09</h2>
+          <p class="section-subtitle">Mahasiswa Universitas Bakti Tunas Husada (BTH) Tasikmalaya yang mengabdi untuk masyarakat Desa Sukagalih.</p>
+        </div>
+
+        <div class="team-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;">
+          ${kkn.members.map(m => `
+            <div class="team-card">
+              <div style="padding: 1.5rem 1rem 0.5rem 1rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div style="
+                  width: 64px;
+                  height: 64px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, ${m.badgeColor}, #244A2A);
+                  color: #FFF;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  margin-bottom: 0.85rem;
+                  box-shadow: 0 4px 12px rgba(36, 74, 42, 0.2);
+                ">
+                  ${m.avatar}
+                </div>
+                <span style="
+                  display: inline-block;
+                  font-size: 0.72rem;
+                  font-weight: 700;
+                  padding: 0.2rem 0.65rem;
+                  border-radius: var(--radius-full);
+                  background: var(--bg-light-moss);
+                  color: var(--secondary-deep);
+                  margin-bottom: 0.5rem;
+                  text-transform: uppercase;
+                  letter-spacing: 0.04em;
+                ">
+                  ${m.division}
+                </span>
+                <h4 class="team-name" style="font-size: 0.95rem; margin-bottom: 0.25rem;">${m.name}</h4>
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary-main);">${m.role}</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.35rem;">Universitas BTH Tasikmalaya</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: KONTAK & ASPIRASI (/kontak)
+  // =========================================================================
+  renderContactPage() {
+    const data = SukagalihData;
+    const v = data.villageInfo;
+
+    return `
+      <div class="container section">
+        <div class="section-header">
+          <div class="section-badge">Layanan Warga</div>
+          <h1 class="section-title">Mari Terhubung bersama Kami</h1>
+          <p class="section-subtitle">Pemerintah Desa Sukagalih siap melayani kebutuhan informasi, surat pengantar, dan aspirasi masyarakat.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Kantor Desa -->
+          <div class="contact-info-card">
+            <h3 style="font-size: 1.35rem; color: var(--secondary-deep); margin-bottom: 0.5rem;">Kantor Desa Sukagalih</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-text-label">Alamat Kantor</div>
+                  <div class="contact-text-value">${v.address}</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <div class="contact-text-label">Hotline / Telepon Resmi</div>
+                  <div class="contact-text-value">${v.hotline}</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <div class="contact-text-label">Email Resmi</div>
+                  <div class="contact-text-value">${v.email}</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">⏱️</div>
+                <div>
+                  <div class="contact-text-label">Jam Pelayanan</div>
+                  <div class="contact-text-value">${v.officeHours}</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <a href="https://wa.me/${v.hotline.replace(/\D/g, '')}?text=${encodeURIComponent('Halo Pemerintah Desa Sukagalih, saya ingin berkonsultasi mengenai pelayanan desa.')}" target="_blank" class="btn btn-primary btn-block">
+                💬 Hubungi via WhatsApp Desa
+              </a>
+            </div>
+          </div>
+
+          <!-- Form Aspirasi & Permohonan Layanan -->
+          <div class="form-card">
+            <h3 style="font-size: 1.35rem; color: var(--secondary-deep); margin-bottom: 0.5rem;">Kirim Aspirasi & Pertanyaan</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+              Formulir digital untuk menyampaikan permohonan informasi, aspirasi pembangunan, atau kritik & saran.
+            </p>
+
+            <form id="contactForm" onsubmit="SukagalihApp.handleContactSubmit(event)">
+              <div class="form-group">
+                <label class="form-label">Nama Lengkap *</label>
+                <input type="text" class="form-control" required placeholder="Masukkan nama Anda">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Nomor WhatsApp / HP *</label>
+                <input type="tel" class="form-control" required placeholder="08xxxxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Asal Dusun / Wilayah *</label>
+                <select class="form-control" required>
+                  <option value="">Pilih Dusun...</option>
+                  <option value="Dusun Cikatubang">Dusun Cikatubang</option>
+                  <option value="Dusun Sindanggalih">Dusun Sindanggalih</option>
+                  <option value="Dusun Sindangkerta">Dusun Sindangkerta</option>
+                  <option value="Dusun Parakankawung">Dusun Parakankawung</option>
+                  <option value="Luar Desa Sukagalih">Luar Desa Sukagalih</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Pesan / Aspirasi *</label>
+                <textarea class="form-control" required placeholder="Tuliskan aspirasi atau keperluan Anda secara jelas..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                🚀 Kirim Pesan Sekarang
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Peta Interaktif Kontak -->
+        <div style="margin-top: 3.5rem;">
+          <h3 style="font-size: 1.35rem; color: var(--secondary-deep); margin-bottom: 1rem;">Lokasi Balai Desa Sukagalih</h3>
+          <div id="contactMap" class="map-container"></div>
+        </div>
+      </div>
+    `;
+  },
+
+  handleContactSubmit(e) {
+    e.preventDefault();
+    alert('Terima kasih! Pesan dan aspirasi Anda telah berhasil dikirimkan ke Tim Layanan Desa Sukagalih.');
+    e.target.reset();
+  },
+
+  // =========================================================================
+  // VIEW: ADMIN CMS DASHBOARD MOCK (/admin)
+  // =========================================================================
+  renderAdminPage() {
+    const data = SukagalihData;
+
+    return `
+      <div class="container section">
+        <div class="card" style="padding: 2rem; margin-bottom: 2rem; background: var(--secondary-deep); color: #FFF;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--primary-light); font-weight: 700;">Portal Administrasi Konten</div>
+              <h1 style="font-size: 1.85rem; color: #FFF;">Dashboard Pengelolaan Desa Sukagalih</h1>
+              <p style="font-size: 0.85rem; color: #B9D4B6;">Sistem CMS Terpadu untuk Publikasi Berita, Katalog UMKM & Data Kependudukan</p>
+            </div>
+            <div>
+              <a href="#/" class="btn btn-secondary btn-sm">← Lihat Website Publik</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Metrics -->
+        <div class="stats-grid" style="margin-bottom: 2.5rem;">
+          <div class="stat-card">
+            <div class="stat-icon">🛍️</div>
+            <div class="stat-info">
+              <span class="stat-value">${data.umkm.length}</span>
+              <span class="stat-label">Total Produk UMKM</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📰</div>
+            <div class="stat-info">
+              <span class="stat-value">${data.news.length}</span>
+              <span class="stat-label">Artikel & Berita Desa</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🖼️</div>
+            <div class="stat-info">
+              <span class="stat-value">${data.gallery.length}</span>
+              <span class="stat-label">Foto Dokumentasi Galeri</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-info">
+              <span class="stat-value">${data.events.length}</span>
+              <span class="stat-label">Agenda Kegiatan Desa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock Admin CMS Table -->
+        <div class="card" style="padding: 2rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.25rem; color: var(--secondary-deep);">Daftar Produk UMKM Desa (Live Edit Mock)</h3>
+            <button class="btn btn-primary btn-sm" onclick="alert('Fitur Tambah Produk Mock: Buka formulir input produk baru.')">+ Tambah Produk UMKM</button>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Nama Produk</th>
+                  <th>Kategori</th>
+                  <th>Produsen UMKM</th>
+                  <th>Harga</th>
+                  <th>Lokasi</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${data.umkm.map(u => `
+                  <tr>
+                    <td><strong>${u.name}</strong></td>
+                    <td><span class="facility-tag">${u.category}</span></td>
+                    <td>${u.umkmName}</td>
+                    <td style="color: var(--primary-main); font-weight: 700;">${u.price}</td>
+                    <td>${u.location}</td>
+                    <td><span style="color: #2E7D32; font-weight: 700; font-size: 0.8rem;">● Aktif</span></td>
+                    <td>
+                      <button class="btn btn-outline btn-sm" style="padding: 0.25rem 0.65rem; font-size: 0.75rem;" onclick="alert('Edit Mock: ${u.name}')">Edit</button>
+                    </td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  // =========================================================================
+  // VIEW: 404 NOT FOUND
+  // =========================================================================
+  renderNotFound() {
+    return `
+      <div class="container section" style="text-align: center; padding: 6rem 1rem;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🌿</div>
+        <h1 class="section-title">Halaman Tidak Ditemukan</h1>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">Halaman yang Anda cari mungkin sedang dalam pembaruan atau alamat URL tidak sesuai.</p>
+        <a href="#/" class="btn btn-primary">Kembali ke Beranda Desa Sukagalih</a>
+      </div>
+    `;
+  }
+};
+
+// Initialize App immediately if DOM is already ready, or on DOMContentLoaded
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+  SukagalihApp.init();
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    SukagalihApp.init();
+  });
+}
+
+if (typeof window !== 'undefined') {
+  window.SukagalihApp = SukagalihApp;
+}
+
+  </script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function() {});
+      });
+    }
+  </script>
+</body>
+</html>
