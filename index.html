@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Desa Sukagalih | Kecamatan Sukaratu, Kabupaten Tasikmalaya, Jawa Barat</title>
   <meta name="description" content="Portal Digital Resmi Desa Sukagalih, Kecamatan Sukaratu, Kabupaten Tasikmalaya. Mengenalkan potensi desa agraris, UMKM unggulan, wisata alam Galunggung, dan program KKN 09 Universitas BTH.">
   <meta name="keywords" content="Desa Sukagalih, Sukagalih Sukaratu, Tasikmalaya, Desa Digital Indonesia, Batik Sukagalih, UMKM Sukagalih, Wisata Galunggung, KKN BTH 2026">
@@ -5519,11 +5522,13 @@ if (typeof window !== 'undefined') {
 
   </script>
 
-  <!-- PWA Service Worker Registration -->
+  <!-- Service Worker Cache Busting -->
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js').catch(function() {});
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.update();
+        }
       });
     }
   </script>
